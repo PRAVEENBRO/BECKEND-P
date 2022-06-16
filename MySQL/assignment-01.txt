@@ -1,0 +1,458 @@
+1)
+
+mysql> select count(*)
+    -> from emp
+    -> where sal<2000;
++----------+
+| count(*) |
++----------+
+|        8 |
++----------+
+
+2)
+
+mysql> select sum(sal)
+    -> from emp
+    -> where job='clerk';
++----------+
+| sum(sal) |
++----------+
+|     4150 |
++----------+
+
+3)
+
+mysql> select avg(sal) from emp;
++-----------+
+| avg(sal)  |
++-----------+
+| 2073.2143 |
++-----------+
+
+4)
+
+mysql> select count(*) from emp where ename like 'A%';
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+
+
+5)
+
+mysql> select count(*) from emp where job in('clerk','manager');
++----------+
+| count(*) |
++----------+
+|        7 |
++----------+
+
+6)
+
+mysql> select count(*) from emp where mgr=7839;
++----------+
+| count(*) |
++----------+
+|        3 |
++----------+
+
+7)
+
+mysql> select count(*) from emp where comm is not null and deptno=30;
++----------+
+| count(*) |
++----------+
+|        4 |
++----------+
+
+8)
+
+mysql> select avg(sal), sum(sal), count(*), max(sal) from emp where job = 'president';
++-----------+----------+----------+----------+
+| avg(sal)  | sum(sal) | count(*) | max(sal) |
++-----------+----------+----------+----------+
+| 5000.0000 |     5000 |        1 |     5000 |
++-----------+----------+----------+----------+
+
+9)
+
+mysql> select count(*), sum(sal) from emp where ename like '%LL%';
++----------+----------+
+| count(*) | sum(sal) |
++----------+----------+
+|        2 |     2900 |
++----------+----------+
+
+
+ ===================  22-12/2021  ========================
+
+
+  1) write a syntex for update with an example?
+  2) write tae syntex for DELETE statement with an example?
+  3) explain projection with an example?
+  4) explain logical operation with an example?
+  5) list down special operators?
+  6) what is function and what are the types of function
+  7) what is multirow function explain each with an example
+  8) what is singlerow function explain each with an example
+
+
+ SINGLE ROW FUNCTIONS
+
+1)
+
+mysql> SELECT LOWER(ENAME), SAL  FROM EMP WHERE LENGTH(SAL)=4;
++--------------+------+
+| LOWER(ENAME) | SAL  |
++--------------+------+
+| allen        | 1600 |
+| ward         | 1250 |
+| jones        | 2975 |
+| martin       | 1250 |
+| blake        | 2850 |
+| clark        | 2450 |
+| scott        | 3000 |
+| king         | 5000 |
+| turner       | 1500 |
+| adams        | 1100 |
+| ford         | 3000 |
+| miller       | 1300 |
++--------------+------+
+
+2)
+
+
+
+mysql> SELECT REVERSE(JOB) ,ENAME FROM EMP WHERE LENGTH(ENAME)=6;
++--------------+--------+
+| REVERSE(JOB) | ENAME  |
++--------------+--------+
+| NAMSELAS     | MARTIN |
+| NAMSELAS     | TURNER |
+| KRELC        | MILLER |
++--------------+--------+
+
+3)
+
+mysql> SELECT ENAME FROM EMP WHERE ENAME LIKE 'A%' OR ENAME LIKE 'S%';
++-------+
+| ENAME |
++-------+
+| SMITH |
+| ALLEN |
+| SCOTT |
+| ADAMS |
++-------+
+
+4)
+
+mysql> SELECT ENAME FROM EMP WHERE ENAME  LIKE 'A%' OR ENAME LIKE 'E%' OR ENAME LIKE 'I%' OR ENAME LIKE 'O%' OR ENAME LIKE 'U%';
++-------+
+| ENAME |
++-------+
+| ALLEN |
+| ADAMS |
++-------+
+
+
+
+
+
+
+
+5)
+
+
+
+mysql> SELECT ENAME FROM EMP WHERE SUBSTR(ENAME,1,1) IN ('A','E','I','O','U');
++-------+
+| ENAME |
++-------+
+| ALLEN |
+| ADAMS |
++-------+
+
+
+
+
+
+6)
+mysql> SELECT SUBSTR(ENAME, 1, LENGTH(ENAME)/2) FROM EMP;
++-----------------------------------+
+| SUBSTR(ENAME, 1, LENGTH(ENAME)/2) |
++-----------------------------------+
+| SMI                               |
+| ALL                               |
+| WA                                |
+| JON                               |
+| MAR                               |
+| BLA                               |
+| CLA                               |
+| SCO                               |
+| KI                                |
+| TUR                               |
+| ADA                               |
+| JAM                               |
+| FO                                |
+| MIL                               |
++-----------------------------------+
+
+7)
+mysql> SELECT SUBSTR(ENAME, LENGTH(ENAME)/2) FROM EMP;
++--------------------------------+
+| SUBSTR(ENAME, LENGTH(ENAME)/2) |
++--------------------------------+
+| ITH                            |
+| LEN                            |
+| ARD                            |
+| NES                            |
+| RTIN                           |
+| AKE                            |
+| ARK                            |
+| OTT                            |
+| ING                            |
+| RNER                           |
+| AMS                            |
+| MES                            |
+| ORD                            |
+| LLER                           |
++--------------------------------+
+
+
+
+
+
+========================  GROUP BY CLOUSE =========================
+
+
+
+mysql> SELECT DEPTNO, MAX(SAL)
+    -> FROM EMP
+    -> GROUP BY DEPTNO;
++--------+----------+
+| DEPTNO | MAX(SAL) |
++--------+----------+
+|     20 |     3000 |
+|     30 |     2850 |
+|     10 |     5000 |
++--------+----------+
+
+
+
+
+1)
+
+mysql> select deptno, count(*) from emp group by deptno;
++--------+----------+
+| deptno | count(*) |
++--------+----------+
+|     20 |        5 |
+|     30 |        6 |
+|     10 |        3 |
++--------+----------+
+
+
+2)
+
+mysql> select deptno, count(*) from emp where job not in ('manager') group by deptno;
++--------+----------+
+| deptno | count(*) |
++--------+----------+
+|     20 |        4 |
+|     30 |        5 |
+|     10 |        2 |
++--------+----------+
+
+
+
+3)
+
+mysql> select job, max(sal) from emp where sal>2100 group by job;
++-----------+----------+
+| job       | max(sal) |
++-----------+----------+
+| MANAGER   |     2975 |
+| ANALYST   |     3000 |
+| PRESIDENT |     5000 |
++-----------+----------+
+
+4)
+
+mysql> select deptno, count(*) from emp where job='clerk' group by deptno;
++--------+----------+
+| deptno | count(*) |
++--------+----------+
+|     20 |        2 |
+|     30 |        1 |
+|     10 |        1 |
++--------+----------+
+
+
+5)
+
+mysql> select deptno ,count(*) from emp where job not in ('president') group by deptno;
++--------+----------+
+| deptno | count(*) |
++--------+----------+
+|     20 |        5 |
+|     30 |        6 |
+|     10 |        2 |
++--------+----------+
+
+6)
+
+mysql> select job ,sum(sal) from emp group by job;
++-----------+----------+
+| job       | sum(sal) |
++-----------+----------+
+| CLERK     |     4150 |
+| SALESMAN  |     5600 |
+| MANAGER   |     8275 |
+| ANALYST   |     6000 |
+| PRESIDENT |     5000 |
++-----------+----------+
+
+
+7)
+mysql> select deptno, count(*) from emp where job in ('manager') group by job;
++--------+----------+
+| deptno | count(*) |
++--------+----------+
+|     20 |        3 |
++--------+----------+
+
+8)
+mysql> select deptno , avg(sal) from emp where deptno not in(20) group by deptno;
++--------+-----------+
+| deptno | avg(sal)  |
++--------+-----------+
+|     30 | 1566.6667 |
+|     10 | 2916.6667 |
++--------+-----------+
+
+9)
+
+mysql> select job, count(*) from emp where ename like 'A%' group by job;
++----------+----------+
+| job      | count(*) |
++----------+----------+
+| SALESMAN |        1 |
+| CLERK    |        1 |
++----------+----------+
+
+10)
+
+mysql> select deptno, sum(sal) from emp where job='salesman' group by deptno;
++--------+----------+
+| deptno | sum(sal) |
++--------+----------+
+|     30 |     5600 |
++--------+----------+
+
+
+
+
+
+
+
+============================ HAVING CLOUSE ==============================
+
+
+
+
+1)
+mysql> select deptno , count(*)
+    -> from emp
+    -> group by deptno
+    -> having count(deptno)>3;
++--------+----------+
+| deptno | count(*) |
++--------+----------+
+|     20 |        5 |
+|     30 |        6 |
++--------+----------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1) write a syntex for update with an example?
+  2) write tae syntex for DELETE statement with an example?
+  3) explain projection with an example?
+  4) explain logical operation with an example?
+  5) list down special operators?
+  6) what is function and what are the types of function?
+  7) what is multirow function explain each with an example?
+  8) what is singlerow function explain each with an example ?
+  9) explain group by cluse with syntax?
+  10) explain having cluse with syntax?
+  11) explain order cluse with syntax?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

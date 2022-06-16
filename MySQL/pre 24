@@ -1,0 +1,138 @@
+mysql> CALL EMPDET();
+    -> 
+    -> 
+    -> ;
+    -> ;
+    -> &&
+ERROR 1305 (42000): PROCEDURE techno.EMPDET does not exist
+mysql> DELIMITER;
+    -> CALL EMPDET();
+    -> &&
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DELIMITER;CALL EMPDET()' at line 1
+mysql> DELIMITER ABC 
+mysql> ^C
+mysql> 
+mysql> 
+mysql> DELIMITER %
+mysql> CREATE PROCEDURE EMPDET()
+    -> BEGIN
+    -> SELECT JOB FROM EMP
+    -> END %
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 4
+mysql> DELIMITER %
+mysql> CREATE PROCEDURE EMPDET()
+    -> BEGIN
+    -> SELECT JOB FROM EMP;
+    -> END %
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CALL EMPDET()
+    -> CALL EMPDET()%
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CALL EMPDET()' at line 2
+mysql> 
+mysql> DELIMITER BRO
+mysql> CREATE PROCEDURE EMPD()
+    -> BEGIN
+    -> SELECT ENAME FROM EMP;
+    -> END BRO
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> CALL EMPD() BROBRO
++--------+
+| ENAME  |
++--------+
+| SMITH  |
+| ALLEN  |
+| WARD   |
+| JONES  |
+| MARTIN |
+| BLAKE  |
+| CLARK  |
+| SCOTT  |
+| KING   |
+| TURNER |
+| ADAMS  |
+| JAMES  |
+| FORD   |
+| MILLER |
++--------+
+14 rows in set (0.01 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+ERROR: 
+No query specified
+
+mysql> DELIMITER =
+mysql> CREATE PROCEDURE EMPBRO()
+    -> BEGIN
+    -> SELECT * FROM EMP;
+    -> END =
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> CALL EMPBRO() ==
++-------+--------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME  | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+--------+-----------+------------+------+------+------+--------+
+|  7369 | SMITH  | CLERK     | 1980-12-17 | 7902 |  800 | NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 1981-02-20 | 7698 | 1600 |  300 |     30 |
+|  7521 | WARD   | SALESMAN  | 1981-02-22 | 7698 | 1250 |  500 |     30 |
+|  7566 | JONES  | MANAGER   | 1981-04-02 | 7839 | 2975 | NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 1981-09-28 | 7698 | 1250 | 1400 |     30 |
+|  7698 | BLAKE  | MANAGER   | 1981-05-01 | 7839 | 2850 | NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 1981-06-09 | 7839 | 2450 | NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 1987-04-19 | 7566 | 3000 | NULL |     20 |
+|  7839 | KING   | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 1981-09-08 | 7698 | 1500 |    0 |     30 |
+|  7876 | ADAMS  | CLERK     | 1987-05-23 | 7788 | 1100 | NULL |     20 |
+|  7900 | JAMES  | CLERK     | 1981-12-03 | 7698 |  950 | NULL |     30 |
+|  7902 | FORD   | ANALYST   | 1981-12-03 | 7566 | 3000 | NULL |     20 |
+|  7934 | MILLER | CLERK     | 1982-01-23 | 7782 | 1300 | NULL |     10 |
++-------+--------+-----------+------------+------+------+------+--------+
+14 rows in set (0.01 sec)
+
+Query OK, 0 rows affected (0.23 sec)
+
+ERROR: 
+No query specified
+
+mysql> VIEW
+    -> ^C
+mysql> CREATE VIEW VIEWNAME AS
+    -> SELECT COLUMNNAME FROM TABLE_NAME;
+    -> 
+    -> 
+    -> 
+    -> EX:-
+    -> CREATE VIEW EMPLOYESAL AS
+    -> SELECT SAL FROM EMP
+    -> 
+    -> 
+    -> 
+    -> 
+    -> CALL VIEW 
+    -> SELECT COL FROM VIEW_NAME;
+    -> 
+    -> ^C
+mysql> =
+ERROR: 
+No query specified
+
+mysql> ;
+    -> =
+ERROR 1065 (42000): Query was empty
+mysql> ;
+    -> 
+    -> ;
+    -> =
+ERROR 1065 (42000): Query was empty
+mysql> DELIMITER ;
+mysql> ;
+ERROR: 
+No query specified
+
+mysql> ;
+ERROR: 
+No query specified
+
+mysql> Terminal close -- exit!

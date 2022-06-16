@@ -1,0 +1,17 @@
+{
+  "name": "shopping-app",
+  "version": "1.0.0",
+  "description": "Shopping app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DEVIL",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "nodemon": "^2.0.15"
+  }
+}

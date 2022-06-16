@@ -1,0 +1,137 @@
+mysql> select max(sal) from emp;
++----------+
+| max(sal) |
++----------+
+|     5000 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select max(sal) from emp where sal<( select max(sal) from emp );
++----------+
+| max(sal) |
++----------+
+|     3000 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select max(sal) from emp where sal<( select max(sal) from emp where sal<(select max(sal) from emp) );
++----------+
+| max(sal) |
++----------+
+|     2975 |
++----------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+
+
+======================== nested assignment ===========================
+
+
+1)
+
+
+2)write a quary to display 3rd min salary
+
+ans
+
+mysql> select min(sal)
+       from emp where sal>( select min(sal)  
+                           from emp where sal>(select min(sal)
+                                               from emp) );
++----------+
+| min(sal) |
++----------+
+|     1100 |
++----------+
+
+
+3)
+
+mysql> select ename from emp where sal =(select max(sal) from emp where sal<( select max(sal) from emp ));
++-------+
+| ename |
++-------+
+| SCOTT |
+| FORD  |
++-------+
+
+4)
+
+mysql> select ename from emp where sal=(select  min(sal) from emp where sal>(select min(sal) from emp where sal>(select min(sal) from emp )));
++-------+
+| ename |
++-------+
+| ADAMS |
++-------+
+1 row in set (0.00 sec)
+
+
+
+5)
+
++-------+-------+---------+------------+------+------+------+--------+
+| EMPNO | ENAME | JOB     | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+-------+---------+------------+------+------+------+--------+
+|  7788 | SCOTT | ANALYST | 1987-04-19 | 7566 | 3000 | NULL |     20 |
+|  7902 | FORD  | ANALYST | 1981-12-03 | 7566 | 3000 | NULL |     20 |
++-------+-------+---------+------------+------+------+------+--------+
+
+6)
+mysql> select dname from dept where deptno=(select deptno from emp where sal=(select min(sal) from emp));
++----------+
+| dname    |
++----------+
+| RESEARCH |
++----------+
+
+
+1) what is subquary? when do we use subquary ?
+2) what are the types of subquary. explain the types of subquary ?
+3) what is nested subquary ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

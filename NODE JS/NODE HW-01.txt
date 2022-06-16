@@ -1,0 +1,13 @@
+1) explain global object ?
+2) what is node module? explain the types of node modules ?
+3) What is fs module? how touse fs module ?
+4) how to read the data from the file ?
+5) how to write the data to a file ?
+6) Difference btw blocking IO and non-Blocking IO ?
+7) write an example code for sync and Async ?
+
+
+Create a file read the data,write the data,append the data to the existing file, rename the file ,delete the folder
+
+
+explain REPL? 

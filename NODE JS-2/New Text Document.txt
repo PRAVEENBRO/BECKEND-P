@@ -1,0 +1,35 @@
+http header 
+http request
+
+
+key element of http request:
+1) web url ( header section )
+2) form data ( can be in both header and body section)
+3) http methods ( in header section while passing request from browser to server)
+4) cookies
+
+cookies: its is stored in storege when we 
+
+
+key elements of http responce
+1) status code
+2) actual content
+3) content type
+4) cookies 
+
+
+server code: 200 -> means server successfully handel the request
+server code: 400 -> page not found / web resource not found
+server code: 500 -> internal server error
+
+Content-Type:
+
+1 plain text= text/plain
+2 html = text/html
+3 json = application/json
+4 pdf = application/pdf
+
+ways to interact with web application
+1) by typing the url.
+2) by clicking links.
+3) by submitting form data

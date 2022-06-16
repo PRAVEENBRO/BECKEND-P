@@ -1,0 +1,10 @@
+
+writing the data
+
+What are buffer and streams?
+
+Streams work on a concept called buffer. A buffer is a temporary
+memory that a stream takes to hold some data until it is consumed.
+In a stream, the buffer size is decided by the  highWatermark 
+property on the stream instance which is a number denoting the 
+size of the buffer in bytes.

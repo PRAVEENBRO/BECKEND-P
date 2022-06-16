@@ -1,0 +1,106 @@
+----------------------  assignment on ALL & OR  ----------------------
+
+1)
+
+mysql> select ename, sal from emp where sal<all(select sal from emp where job='salesman');
++-------+------+
+| ename | sal  |
++-------+------+
+| SMITH |  800 |
+| ADAMS | 1100 |
+| JAMES |  950 |
++-------+------+
+
+2)
+
+mysql> select * from emp where sal<any(select sal from emp where job='manager');
++-------+--------+----------+------------+------+------+------+--------+
+| EMPNO | ENAME  | JOB      | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+--------+----------+------------+------+------+------+--------+
+|  7369 | SMITH  | CLERK    | 1980-12-17 | 7902 |  800 | NULL |     20 |
+|  7499 | ALLEN  | SALESMAN | 1981-02-20 | 7698 | 1600 |  300 |     30 |
+|  7521 | WARD   | SALESMAN | 1981-02-22 | 7698 | 1250 |  500 |     30 |
+|  7654 | MARTIN | SALESMAN | 1981-09-28 | 7698 | 1250 | 1400 |     30 |
+|  7698 | BLAKE  | MANAGER  | 1981-05-01 | 7839 | 2850 | NULL |     30 |
+|  7782 | CLARK  | MANAGER  | 1981-06-09 | 7839 | 2450 | NULL |     10 |
+|  7844 | TURNER | SALESMAN | 1981-09-08 | 7698 | 1500 |    0 |     30 |
+|  7876 | ADAMS  | CLERK    | 1987-05-23 | 7788 | 1100 | NULL |     20 |
+|  7900 | JAMES  | CLERK    | 1981-12-03 | 7698 |  950 | NULL |     30 |
+|  7934 | MILLER | CLERK    | 1982-01-23 | 7782 | 1300 | NULL |     10 |
++-------+--------+----------+------------+------+------+------+--------+
+
+3)
+
+mysql> select ename, hiredate from emp where hiredate<all(select hiredate from emp where deptno = 10);
++-------+------------+
+| ename | hiredate   |
++-------+------------+
+| SMITH | 1980-12-17 |
+| ALLEN | 1981-02-20 |
+| WARD  | 1981-02-22 |
+| JONES | 1981-04-02 |
+| BLAKE | 1981-05-01 |
++-------+------------+
+
+
+4)
+
+mysql> select ename, hiredate , sal*12  from emp where hiredate<(select hiredate from emp where job='president' and deptno=20);
+Empty set (0.00 sec)
+
+5)
+
+mysql> select *, sal*12 from emp where sal*12<all(select sal*12 from emp where deptno=10);
++-------+--------+----------+------------+------+------+------+--------+--------+
+| EMPNO | ENAME  | JOB      | HIREDATE   | MGR  | SAL  | COMM | DEPTNO | sal*12 |
++-------+--------+----------+------------+------+------+------+--------+--------+
+|  7369 | SMITH  | CLERK    | 1980-12-17 | 7902 |  800 | NULL |     20 |   9600 |
+|  7521 | WARD   | SALESMAN | 1981-02-22 | 7698 | 1250 |  500 |     30 |  15000 |
+|  7654 | MARTIN | SALESMAN | 1981-09-28 | 7698 | 1250 | 1400 |     30 |  15000 |
+|  7876 | ADAMS  | CLERK    | 1987-05-23 | 7788 | 1100 | NULL |     20 |  13200 |
+|  7900 | JAMES  | CLERK    | 1981-12-03 | 7698 |  950 | NULL |     30 |  11400 |
++-------+--------+----------+------------+------+------+------+--------+--------+
+
+6)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

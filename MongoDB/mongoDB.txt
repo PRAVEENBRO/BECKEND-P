@@ -1,0 +1,1291 @@
+Microsoft Windows [Version 10.0.19043.1348]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\NAVEEN\Desktop\TE Training\MongoDB\DATA\DB>show dbs
+'show' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\NAVEEN\Desktop\TE Training\MongoDB\DATA\DB>mongo
+MongoDB shell version v5.0.5
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("fe395bf5-c38d-40f1-b669-cae87bcb3075") }
+MongoDB server version: 5.0.5
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2021-12-13T12:24:30.089+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+WARNING: some history file lines were truncated at 4095 bytes.
+> show bds
+uncaught exception: Error: don't know how to show [bds] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> show dbs
+admin   0.000GB
+config  0.000GB
+devil   0.000GB
+emp     0.000GB
+local   0.000GB
+> show emp
+uncaught exception: Error: don't know how to show [emp] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> use emp
+switched to db emp
+> db.emp.find()
+{ "_id" : ObjectId("61b7194580f65a4615717b64"), "id" : 1, "name" : "Leanne Graham", "username" : "Bret", "email" : "Sincere@april.biz", "address" : { "street" : "Kulas Light", "suite" : "Apt. 556", "city" : "Gwenborough", "zipcode" : "92998-3874", "geo" : { "lat" : "-37.3159", "lng" : "81.1496" } }, "phone" : "1-770-736-8031 x56442", "website" : "hildegard.org", "company" : { "name" : "Romaguera-Crona", "catchPhrase" : "Multi-layered client-server neural-net", "bs" : "harness real-time e-markets" } }
+{ "_id" : ObjectId("61b7194580f65a4615717b65"), "id" : 2, "name" : "Ervin Howell", "username" : "Antonette", "email" : "Shanna@melissa.tv", "address" : { "street" : "Victor Plains", "suite" : "Suite 879", "city" : "Wisokyburgh", "zipcode" : "90566-7771", "geo" : { "lat" : "-43.9509", "lng" : "-34.4618" } }, "phone" : "010-692-6593 x09125", "website" : "anastasia.net", "company" : { "name" : "Deckow-Crist", "catchPhrase" : "Proactive didactic contingency", "bs" : "synergize scalable supply-chains" } }
+{ "_id" : ObjectId("61b7194580f65a4615717b66"), "id" : 3, "name" : "Clementine Bauch", "username" : "Samantha", "email" : "Nathan@yesenia.net", "address" : { "street" : "Douglas Extension", "suite" : "Suite 847", "city" : "McKenziehaven", "zipcode" : "59590-4157", "geo" : { "lat" : "-68.6102", "lng" : "-47.0653" } }, "phone" : "1-463-123-4447", "website" : "ramiro.info", "company" : { "name" : "Romaguera-Jacobson", "catchPhrase" : "Face to face bifurcated interface", "bs" : "e-enable strategic applications" } }
+{ "_id" : ObjectId("61b7194580f65a4615717b67"), "id" : 4, "name" : "Patricia Lebsack", "username" : "Karianne", "email" : "Julianne.OConner@kory.org", "address" : { "street" : "Hoeger Mall", "suite" : "Apt. 692", "city" : "South Elvis", "zipcode" : "53919-4257", "geo" : { "lat" : "29.4572", "lng" : "-164.2990" } }, "phone" : "493-170-9623 x156", "website" : "kale.biz", "company" : { "name" : "Robel-Corkery", "catchPhrase" : "Multi-tiered zero tolerance productivity", "bs" : "transition cutting-edge web services" } }
+{ "_id" : ObjectId("61b7194580f65a4615717b68"), "id" : 5, "name" : "Chelsey Dietrich", "username" : "Kamren", "email" : "Lucio_Hettinger@annie.ca", "address" : { "street" : "Skiles Walks", "suite" : "Suite 351", "city" : "Roscoeview", "zipcode" : "33263", "geo" : { "lat" : "-31.8129", "lng" : "62.5342" } }, "phone" : "(254)954-1289", "website" : "demarco.info", "company" : { "name" : "Keebler LLC", "catchPhrase" : "User-centric fault-tolerant solution", "bs" : "revolutionize end-to-end systems" } }
+{ "_id" : ObjectId("61b7194580f65a4615717b69"), "id" : 6, "name" : "Mrs. Dennis Schulist", "username" : "Leopoldo_Corkery", "email" : "Karley_Dach@jasper.info", "address" : { "street" : "Norberto Crossing", "suite" : "Apt. 950", "city" : "South Christy", "zipcode" : "23505-1337", "geo" : { "lat" : "-71.4197", "lng" : "71.7478" } }, "phone" : "1-477-935-8478 x6430", "website" : "ola.org", "company" : { "name" : "Considine-Lockman", "catchPhrase" : "Synchronised bottom-line interface", "bs" : "e-enable innovative applications" } }
+{ "_id" : ObjectId("61b7194580f65a4615717b6a"), "id" : 7, "name" : "Kurtis Weissnat", "username" : "Elwyn.Skiles", "email" : "Telly.Hoeger@billy.biz", "address" : { "street" : "Rex Trail", "suite" : "Suite 280", "city" : "Howemouth", "zipcode" : "58804-1099", "geo" : { "lat" : "24.8918", "lng" : "21.8984" } }, "phone" : "210.067.6132", "website" : "elvis.io", "company" : { "name" : "Johns Group", "catchPhrase" : "Configurable multimedia task-force", "bs" : "generate enterprise e-tailers" } }
+{ "_id" : ObjectId("61b7194580f65a4615717b6b"), "id" : 8, "name" : "Nicholas Runolfsdottir V", "username" : "Maxime_Nienow", "email" : "Sherwood@rosamond.me", "address" : { "street" : "Ellsworth Summit", "suite" : "Suite 729", "city" : "Aliyaview", "zipcode" : "45169", "geo" : { "lat" : "-14.3990", "lng" : "-120.7677" } }, "phone" : "586.493.6943 x140", "website" : "jacynthe.com", "company" : { "name" : "Abernathy Group", "catchPhrase" : "Implemented secondary concept", "bs" : "e-enable extensible e-tailers" } }
+{ "_id" : ObjectId("61b7194580f65a4615717b6c"), "id" : 9, "name" : "Glenna Reichert", "username" : "Delphine", "email" : "Chaim_McDermott@dana.io", "address" : { "street" : "Dayna Park", "suite" : "Suite 449", "city" : "Bartholomebury", "zipcode" : "76495-3109", "geo" : { "lat" : "24.6463", "lng" : "-168.8889" } }, "phone" : "(775)976-6794 x41206", "website" : "conrad.com", "company" : { "name" : "Yost and Sons", "catchPhrase" : "Switchable contextually-based project", "bs" : "aggregate real-time technologies" } }
+{ "_id" : ObjectId("61b7194580f65a4615717b6d"), "id" : 10, "name" : "Clementina DuBuque", "username" : "Moriah.Stanton", "email" : "Rey.Padberg@karina.biz", "address" : { "street" : "Kattie Turnpike", "suite" : "Suite 198", "city" : "Lebsackbury", "zipcode" : "31428-2261", "geo" : { "lat" : "-38.2386", "lng" : "57.2232" } }, "phone" : "024-648-3804", "website" : "ambrose.net", "company" : { "name" : "Hoeger LLC", "catchPhrase" : "Centralized empowering task-force", "bs" : "target end-to-end models" } }
+> db.createCollection('empl')
+{ "ok" : 1 }
+> show empl
+uncaught exception: Error: don't know how to show [empl] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> use empl
+switched to db empl
+> db.empl.insert({"empid":001,"name":"PRAVEEN", "age":23,"phno":7895463215,"address":{"city":"banglore","place":"banashankri","pin":560050}})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({"empid":002,"name":"OMKAR", "age":21,"phno":123654789,"address":{"city":"pune","place":"katriguapi","pin":560051}})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({"empid":003,"name":"SHIVAM", "age":25,"phno":987456321,"address":{"city":"bihar","place":"praveen'heart","pin":560052}})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({"empid":004,"name":"PRABHAT", "age":24,"phno":1478523698,"address":{"city":"dhamtari","place":"chitsghard","pin":565052}})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({"empid":004,"name":"PRATHIBHA", "age":26,"phno":5632879415,"address":{"city":"modhol","place":"uttar karnataka","pin":561252}})
+WriteResult({ "nInserted" : 1 })
+> db.empl.find()
+{ "_id" : ObjectId("61b81b884e1c0c2196d4024d"), "empid" : 1, "name" : "PRAVEEN", "age" : 23, "phno" : 7895463215, "address" : { "city" : "banglore", "place" : "banashankri", "pin" : 560050 } }
+{ "_id" : ObjectId("61b81bf44e1c0c2196d4024e"), "empid" : 2, "name" : "OMKAR", "age" : 21, "phno" : 123654789, "address" : { "city" : "pune", "place" : "katriguapi", "pin" : 560051 } }
+{ "_id" : ObjectId("61b81c534e1c0c2196d4024f"), "empid" : 3, "name" : "SHIVAM", "age" : 25, "phno" : 987456321, "address" : { "city" : "bihar", "place" : "praveen'heart", "pin" : 560052 } }
+{ "_id" : ObjectId("61b81d8a4e1c0c2196d40250"), "empid" : 4, "name" : "PRABHAT", "age" : 24, "phno" : 1478523698, "address" : { "city" : "dhamtari", "place" : "chitsghard", "pin" : 565052 } }
+{ "_id" : ObjectId("61b81e0e4e1c0c2196d40251"), "empid" : 4, "name" : "PRATHIBHA", "age" : 26, "phno" : 5632879415, "address" : { "city" : "modhol", "place" : "uttar karnataka", "pin" : 561252 } }
+> db.empl.find().pretty()
+{
+        "_id" : ObjectId("61b81b884e1c0c2196d4024d"),
+        "empid" : 1,
+        "name" : "PRAVEEN",
+        "age" : 23,
+        "phno" : 7895463215,
+        "address" : {
+                "city" : "banglore",
+                "place" : "banashankri",
+                "pin" : 560050
+        }
+}
+{
+        "_id" : ObjectId("61b81bf44e1c0c2196d4024e"),
+        "empid" : 2,
+        "name" : "OMKAR",
+        "age" : 21,
+        "phno" : 123654789,
+        "address" : {
+                "city" : "pune",
+                "place" : "katriguapi",
+                "pin" : 560051
+        }
+}
+{
+        "_id" : ObjectId("61b81c534e1c0c2196d4024f"),
+        "empid" : 3,
+        "name" : "SHIVAM",
+        "age" : 25,
+        "phno" : 987456321,
+        "address" : {
+                "city" : "bihar",
+                "place" : "praveen'heart",
+                "pin" : 560052
+        }
+}
+{
+        "_id" : ObjectId("61b81d8a4e1c0c2196d40250"),
+        "empid" : 4,
+        "name" : "PRABHAT",
+        "age" : 24,
+        "phno" : 1478523698,
+        "address" : {
+                "city" : "dhamtari",
+                "place" : "chitsghard",
+                "pin" : 565052
+        }
+}
+{
+        "_id" : ObjectId("61b81e0e4e1c0c2196d40251"),
+        "empid" : 4,
+        "name" : "PRATHIBHA",
+        "age" : 26,
+        "phno" : 5632879415,
+        "address" : {
+                "city" : "modhol",
+                "place" : "uttar karnataka",
+                "pin" : 561252
+        }
+}
+> db.createCollection('emps')
+{ "ok" : 1 }
+> use ('emps')
+switched to db ('emps')
+> db.empl.insert({"empid":001,"name":"PRATHIBHA", "age":21,"phno":5632879415,"sal":50000,"email":"prathibha123@gmail.com"address":{"city":"modhol","place":"uttar karnataka","pin":561252}})
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:119
+> db.empl.insert({"empid":001,"name":"PRATHIBHA", "age":21,"phno":5632879415,"sal":50000,"email":"prathibha123@gmail.com",address":{"city":"modhol","place":"uttar karnataka","pin":561252}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:127
+> db.empl.insert({"empid":101,"name":"PRATHIBHA", "age":21,"phno":5632879415,"sal":50000,"email":"prathibha123@gmail.com",address":{"city":"modhol","place":"uttar karnataka","pin":561252}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:127
+> db.empl.insert({"empid":101,"name":"PRATHIBHA", "age":21,"phno":5632879415,"sal":50000,"email":"prathibha123@gmail.com","address":{"city":"modhol","place":"uttar karnataka","pin":561252}})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({"empid":102,"name":"PRAVEEN", "age":23,"phno":9856321475,"sal":120000,"email":"praveen110@gmail.com","address":{"city":"gadag","place":"karnataka","pin":582205}})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({"empid":103,"name":"SHIVAM", "age":25,"phno":978564123,"sal":70000,"email":"shivam143@gmail.com","address":{"city":"praveen's heart","place":"bihar","pin":986574}})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({"empid":104,"name":"OMKAR", "age":21,"phno":5896471235,"sal":110000,"email":"omlar420@gmail.com","address":{"city":"pune","place":"maharastra","pin":569832}})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({"empid":105,"name":"PAWAN", "age":24,"phno":8888888888,"sal":200000,"email":"pawanmerabhai@gmail.com","address":{"city":"chennai","place":"hydrabad","pin":562542}})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({"empid":106,"name":"ZEESHAN", "age":23,"phno":8088866608,"sal":120000,"email":"zeeshanali888@gmail.com","address":{"city":"gadag","place":"meraBhai","pin":565698}})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({"empid":107,"name":"DHUNUSHREE", "age":23,"phno":9856321430,"sal":100000,"email":"dhanushree@gmail.com","address":{"city":"banglore","place":"nagrbhavi","pin":986542}})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({"empid":108,"name":"CHANDAN SIR", "age":28,"phno":9563214785,"sal":180000,"email":"chandansir@gmail.com","address":{"city":"mysore","place":"goodplace","pin":896541}})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({"empid":109,"name":"ARPITHA MAM", "age":26,"phno":4569871235,"sal":130000,"email":"arpithamam@gmail.com","address":{"city":"belgavi","place":"mustplace","pin":698745}})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({"empid":110,"name":"BABLOO", "age":34,"phno":1236987456,"sal":75000,"email":"bubloogi@gmail.com","address":{"city":"mambai","place":"pune","pin":569885}})
+WriteResult({ "nInserted" : 1 })
+> db.emps.find().pretty()
+> db.empl.find()
+{ "_id" : ObjectId("61b820004e1c0c2196d40252"), "empid" : 101, "name" : "PRATHIBHA", "age" : 21, "phno" : 5632879415, "sal" : 50000, "email" : "prathibha123@gmail.com", "address" : { "city" : "modhol", "place" : "uttar karnataka", "pin" : 561252 } }
+{ "_id" : ObjectId("61b820664e1c0c2196d40253"), "empid" : 102, "name" : "PRAVEEN", "age" : 23, "phno" : 9856321475, "sal" : 120000, "email" : "praveen110@gmail.com", "address" : { "city" : "gadag", "place" : "karnataka", "pin" : 582205 } }
+{ "_id" : ObjectId("61b820df4e1c0c2196d40254"), "empid" : 103, "name" : "SHIVAM", "age" : 25, "phno" : 978564123, "sal" : 70000, "email" : "shivam143@gmail.com", "address" : { "city" : "praveen's heart", "place" : "bihar", "pin" : 986574 } }
+{ "_id" : ObjectId("61b821314e1c0c2196d40255"), "empid" : 104, "name" : "OMKAR", "age" : 21, "phno" : 5896471235, "sal" : 110000, "email" : "omlar420@gmail.com", "address" : { "city" : "pune", "place" : "maharastra", "pin" : 569832 } }
+{ "_id" : ObjectId("61b822204e1c0c2196d40256"), "empid" : 105, "name" : "PAWAN", "age" : 24, "phno" : 8888888888, "sal" : 200000, "email" : "pawanmerabhai@gmail.com", "address" : { "city" : "chennai", "place" : "hydrabad", "pin" : 562542 } }
+{ "_id" : ObjectId("61b822864e1c0c2196d40257"), "empid" : 106, "name" : "ZEESHAN", "age" : 23, "phno" : 8088866608, "sal" : 120000, "email" : "zeeshanali888@gmail.com", "address" : { "city" : "gadag", "place" : "meraBhai", "pin" : 565698 } }
+{ "_id" : ObjectId("61b822f04e1c0c2196d40258"), "empid" : 107, "name" : "DHUNUSHREE", "age" : 23, "phno" : 9856321430, "sal" : 100000, "email" : "dhanushree@gmail.com", "address" : { "city" : "banglore", "place" : "nagrbhavi", "pin" : 986542 } }
+{ "_id" : ObjectId("61b823594e1c0c2196d40259"), "empid" : 108, "name" : "CHANDAN SIR", "age" : 28, "phno" : 9563214785, "sal" : 180000, "email" : "chandansir@gmail.com", "address" : { "city" : "mysore", "place" : "goodplace", "pin" : 896541 } }
+{ "_id" : ObjectId("61b823d34e1c0c2196d4025a"), "empid" : 109, "name" : "ARPITHA MAM", "age" : 26, "phno" : 4569871235, "sal" : 130000, "email" : "arpithamam@gmail.com", "address" : { "city" : "belgavi", "place" : "mustplace", "pin" : 698745 } }
+{ "_id" : ObjectId("61b824574e1c0c2196d4025b"), "empid" : 110, "name" : "BABLOO", "age" : 34, "phno" : 1236987456, "sal" : 75000, "email" : "bubloogi@gmail.com", "address" : { "city" : "mambai", "place" : "pune", "pin" : 569885 } }
+> db.empl.find().pretty()
+{
+        "_id" : ObjectId("61b820004e1c0c2196d40252"),
+        "empid" : 101,
+        "name" : "PRATHIBHA",
+        "age" : 21,
+        "phno" : 5632879415,
+        "sal" : 50000,
+        "email" : "prathibha123@gmail.com",
+        "address" : {
+                "city" : "modhol",
+                "place" : "uttar karnataka",
+                "pin" : 561252
+        }
+}
+{
+        "_id" : ObjectId("61b820664e1c0c2196d40253"),
+        "empid" : 102,
+        "name" : "PRAVEEN",
+        "age" : 23,
+        "phno" : 9856321475,
+        "sal" : 120000,
+        "email" : "praveen110@gmail.com",
+        "address" : {
+                "city" : "gadag",
+                "place" : "karnataka",
+                "pin" : 582205
+        }
+}
+{
+        "_id" : ObjectId("61b820df4e1c0c2196d40254"),
+        "empid" : 103,
+        "name" : "SHIVAM",
+        "age" : 25,
+        "phno" : 978564123,
+        "sal" : 70000,
+        "email" : "shivam143@gmail.com",
+        "address" : {
+                "city" : "praveen's heart",
+                "place" : "bihar",
+                "pin" : 986574
+        }
+}
+{
+        "_id" : ObjectId("61b821314e1c0c2196d40255"),
+        "empid" : 104,
+        "name" : "OMKAR",
+        "age" : 21,
+        "phno" : 5896471235,
+        "sal" : 110000,
+        "email" : "omlar420@gmail.com",
+        "address" : {
+                "city" : "pune",
+                "place" : "maharastra",
+                "pin" : 569832
+        }
+}
+{
+        "_id" : ObjectId("61b822204e1c0c2196d40256"),
+        "empid" : 105,
+        "name" : "PAWAN",
+        "age" : 24,
+        "phno" : 8888888888,
+        "sal" : 200000,
+        "email" : "pawanmerabhai@gmail.com",
+        "address" : {
+                "city" : "chennai",
+                "place" : "hydrabad",
+                "pin" : 562542
+        }
+}
+{
+        "_id" : ObjectId("61b822864e1c0c2196d40257"),
+        "empid" : 106,
+        "name" : "ZEESHAN",
+        "age" : 23,
+        "phno" : 8088866608,
+        "sal" : 120000,
+        "email" : "zeeshanali888@gmail.com",
+        "address" : {
+                "city" : "gadag",
+                "place" : "meraBhai",
+                "pin" : 565698
+        }
+}
+{
+        "_id" : ObjectId("61b822f04e1c0c2196d40258"),
+        "empid" : 107,
+        "name" : "DHUNUSHREE",
+        "age" : 23,
+        "phno" : 9856321430,
+        "sal" : 100000,
+        "email" : "dhanushree@gmail.com",
+        "address" : {
+                "city" : "banglore",
+                "place" : "nagrbhavi",
+                "pin" : 986542
+        }
+}
+{
+        "_id" : ObjectId("61b823594e1c0c2196d40259"),
+        "empid" : 108,
+        "name" : "CHANDAN SIR",
+        "age" : 28,
+        "phno" : 9563214785,
+        "sal" : 180000,
+        "email" : "chandansir@gmail.com",
+        "address" : {
+                "city" : "mysore",
+                "place" : "goodplace",
+                "pin" : 896541
+        }
+}
+{
+        "_id" : ObjectId("61b823d34e1c0c2196d4025a"),
+        "empid" : 109,
+        "name" : "ARPITHA MAM",
+        "age" : 26,
+        "phno" : 4569871235,
+        "sal" : 130000,
+        "email" : "arpithamam@gmail.com",
+        "address" : {
+                "city" : "belgavi",
+                "place" : "mustplace",
+                "pin" : 698745
+        }
+}
+{
+        "_id" : ObjectId("61b824574e1c0c2196d4025b"),
+        "empid" : 110,
+        "name" : "BABLOO",
+        "age" : 34,
+        "phno" : 1236987456,
+        "sal" : 75000,
+        "email" : "bubloogi@gmail.com",
+        "address" : {
+                "city" : "mambai",
+                "place" : "pune",
+                "pin" : 569885
+        }
+}
+> db.empl.find({$and:["sal":{$lt:150000}{'address.city':"banglore"}] }{}).preety();
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:25
+> db.empl.find({$and:["sal":{$lt:150000},{'address.city':"banglore"}] }{}).preety();
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:25
+> db.empl.find({$and:["sal":{$lt:150000},{'address.city':"banglore"}] },{}).preety();
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:25
+> db.empl.find({$and:["sal":{$lt:150000},{'address.city':"banglore"}] },{}).preety();
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:25
+> db.empl.find({$and:[{"sal":{$lt:150000}},{'address.city':"banglore"}] },{}).preety();
+uncaught exception: TypeError: db.empl.find(...).preety is not a function :
+@(shell):1:1
+> db.empl.find({$and:[{"sal":{$lt:150000}},{'address.city':"banglore"}] },{}).pretty();
+{
+        "_id" : ObjectId("61b822f04e1c0c2196d40258"),
+        "empid" : 107,
+        "name" : "DHUNUSHREE",
+        "age" : 23,
+        "phno" : 9856321430,
+        "sal" : 100000,
+        "email" : "dhanushree@gmail.com",
+        "address" : {
+                "city" : "banglore",
+                "place" : "nagrbhavi",
+                "pin" : 986542
+        }
+}
+> db.empl.find({$not:{sal:{$lt:100000}} },{}).preety();
+uncaught exception: TypeError: db.empl.find(...).preety is not a function :
+@(shell):1:1
+> db.empl.find({$not:{sal:{$lt:100000}} },{}).pretty();
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown top level operator: $not. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.empl.find({sal:{$not:100000 },{}).preety();
+... db.empl.find({sal:{$not:{$lt:100000}} },{}).pretty();
+... db.empl.find({$not:{sal:{$lt:100000}} },{}).pretty();
+... ^C
+
+> db.empl.find({$not:{sal:{$lt:100000}} },{}).pretty();
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown top level operator: $not. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+>  db.empl.find({sal:{$not:{$lt:100000}} },{}).pretty();
+{
+        "_id" : ObjectId("61b820664e1c0c2196d40253"),
+        "empid" : 102,
+        "name" : "PRAVEEN",
+        "age" : 23,
+        "phno" : 9856321475,
+        "sal" : 120000,
+        "email" : "praveen110@gmail.com",
+        "address" : {
+                "city" : "gadag",
+                "place" : "karnataka",
+                "pin" : 582205
+        }
+}
+{
+        "_id" : ObjectId("61b821314e1c0c2196d40255"),
+        "empid" : 104,
+        "name" : "OMKAR",
+        "age" : 21,
+        "phno" : 5896471235,
+        "sal" : 110000,
+        "email" : "omlar420@gmail.com",
+        "address" : {
+                "city" : "pune",
+                "place" : "maharastra",
+                "pin" : 569832
+        }
+}
+{
+        "_id" : ObjectId("61b822204e1c0c2196d40256"),
+        "empid" : 105,
+        "name" : "PAWAN",
+        "age" : 24,
+        "phno" : 8888888888,
+        "sal" : 200000,
+        "email" : "pawanmerabhai@gmail.com",
+        "address" : {
+                "city" : "chennai",
+                "place" : "hydrabad",
+                "pin" : 562542
+        }
+}
+{
+        "_id" : ObjectId("61b822864e1c0c2196d40257"),
+        "empid" : 106,
+        "name" : "ZEESHAN",
+        "age" : 23,
+        "phno" : 8088866608,
+        "sal" : 120000,
+        "email" : "zeeshanali888@gmail.com",
+        "address" : {
+                "city" : "gadag",
+                "place" : "meraBhai",
+                "pin" : 565698
+        }
+}
+{
+        "_id" : ObjectId("61b822f04e1c0c2196d40258"),
+        "empid" : 107,
+        "name" : "DHUNUSHREE",
+        "age" : 23,
+        "phno" : 9856321430,
+        "sal" : 100000,
+        "email" : "dhanushree@gmail.com",
+        "address" : {
+                "city" : "banglore",
+                "place" : "nagrbhavi",
+                "pin" : 986542
+        }
+}
+{
+        "_id" : ObjectId("61b823594e1c0c2196d40259"),
+        "empid" : 108,
+        "name" : "CHANDAN SIR",
+        "age" : 28,
+        "phno" : 9563214785,
+        "sal" : 180000,
+        "email" : "chandansir@gmail.com",
+        "address" : {
+                "city" : "mysore",
+                "place" : "goodplace",
+                "pin" : 896541
+        }
+}
+{
+        "_id" : ObjectId("61b823d34e1c0c2196d4025a"),
+        "empid" : 109,
+        "name" : "ARPITHA MAM",
+        "age" : 26,
+        "phno" : 4569871235,
+        "sal" : 130000,
+        "email" : "arpithamam@gmail.com",
+        "address" : {
+                "city" : "belgavi",
+                "place" : "mustplace",
+                "pin" : 698745
+        }
+}
+>  db.empl.find({$nor:[{'address.city':"banglore"},{sal:{$gt:120000}}] },{}).pretty();
+{
+        "_id" : ObjectId("61b820004e1c0c2196d40252"),
+        "empid" : 101,
+        "name" : "PRATHIBHA",
+        "age" : 21,
+        "phno" : 5632879415,
+        "sal" : 50000,
+        "email" : "prathibha123@gmail.com",
+        "address" : {
+                "city" : "modhol",
+                "place" : "uttar karnataka",
+                "pin" : 561252
+        }
+}
+{
+        "_id" : ObjectId("61b820664e1c0c2196d40253"),
+        "empid" : 102,
+        "name" : "PRAVEEN",
+        "age" : 23,
+        "phno" : 9856321475,
+        "sal" : 120000,
+        "email" : "praveen110@gmail.com",
+        "address" : {
+                "city" : "gadag",
+                "place" : "karnataka",
+                "pin" : 582205
+        }
+}
+{
+        "_id" : ObjectId("61b820df4e1c0c2196d40254"),
+        "empid" : 103,
+        "name" : "SHIVAM",
+        "age" : 25,
+        "phno" : 978564123,
+        "sal" : 70000,
+        "email" : "shivam143@gmail.com",
+        "address" : {
+                "city" : "praveen's heart",
+                "place" : "bihar",
+                "pin" : 986574
+        }
+}
+{
+        "_id" : ObjectId("61b821314e1c0c2196d40255"),
+        "empid" : 104,
+        "name" : "OMKAR",
+        "age" : 21,
+        "phno" : 5896471235,
+        "sal" : 110000,
+        "email" : "omlar420@gmail.com",
+        "address" : {
+                "city" : "pune",
+                "place" : "maharastra",
+                "pin" : 569832
+        }
+}
+{
+        "_id" : ObjectId("61b822864e1c0c2196d40257"),
+        "empid" : 106,
+        "name" : "ZEESHAN",
+        "age" : 23,
+        "phno" : 8088866608,
+        "sal" : 120000,
+        "email" : "zeeshanali888@gmail.com",
+        "address" : {
+                "city" : "gadag",
+                "place" : "meraBhai",
+                "pin" : 565698
+        }
+}
+{
+        "_id" : ObjectId("61b824574e1c0c2196d4025b"),
+        "empid" : 110,
+        "name" : "BABLOO",
+        "age" : 34,
+        "phno" : 1236987456,
+        "sal" : 75000,
+        "email" : "bubloogi@gmail.com",
+        "address" : {
+                "city" : "mambai",
+                "place" : "pune",
+                "pin" : 569885
+        }
+}
+> db.empl.find({$or[ {'address.city':"chennai"},{sal:{$gt:11000}}  ]},{}).pretty();
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:17
+> db.empl.find({$or:[ {'address.city':"chennai"},{sal:{$gt:11000}}  ]},{}).pretty();
+{
+        "_id" : ObjectId("61b820004e1c0c2196d40252"),
+        "empid" : 101,
+        "name" : "PRATHIBHA",
+        "age" : 21,
+        "phno" : 5632879415,
+        "sal" : 50000,
+        "email" : "prathibha123@gmail.com",
+        "address" : {
+                "city" : "modhol",
+                "place" : "uttar karnataka",
+                "pin" : 561252
+        }
+}
+{
+        "_id" : ObjectId("61b820664e1c0c2196d40253"),
+        "empid" : 102,
+        "name" : "PRAVEEN",
+        "age" : 23,
+        "phno" : 9856321475,
+        "sal" : 120000,
+        "email" : "praveen110@gmail.com",
+        "address" : {
+                "city" : "gadag",
+                "place" : "karnataka",
+                "pin" : 582205
+        }
+}
+{
+        "_id" : ObjectId("61b820df4e1c0c2196d40254"),
+        "empid" : 103,
+        "name" : "SHIVAM",
+        "age" : 25,
+        "phno" : 978564123,
+        "sal" : 70000,
+        "email" : "shivam143@gmail.com",
+        "address" : {
+                "city" : "praveen's heart",
+                "place" : "bihar",
+                "pin" : 986574
+        }
+}
+{
+        "_id" : ObjectId("61b821314e1c0c2196d40255"),
+        "empid" : 104,
+        "name" : "OMKAR",
+        "age" : 21,
+        "phno" : 5896471235,
+        "sal" : 110000,
+        "email" : "omlar420@gmail.com",
+        "address" : {
+                "city" : "pune",
+                "place" : "maharastra",
+                "pin" : 569832
+        }
+}
+{
+        "_id" : ObjectId("61b822204e1c0c2196d40256"),
+        "empid" : 105,
+        "name" : "PAWAN",
+        "age" : 24,
+        "phno" : 8888888888,
+        "sal" : 200000,
+        "email" : "pawanmerabhai@gmail.com",
+        "address" : {
+                "city" : "chennai",
+                "place" : "hydrabad",
+                "pin" : 562542
+        }
+}
+{
+        "_id" : ObjectId("61b822864e1c0c2196d40257"),
+        "empid" : 106,
+        "name" : "ZEESHAN",
+        "age" : 23,
+        "phno" : 8088866608,
+        "sal" : 120000,
+        "email" : "zeeshanali888@gmail.com",
+        "address" : {
+                "city" : "gadag",
+                "place" : "meraBhai",
+                "pin" : 565698
+        }
+}
+{
+        "_id" : ObjectId("61b822f04e1c0c2196d40258"),
+        "empid" : 107,
+        "name" : "DHUNUSHREE",
+        "age" : 23,
+        "phno" : 9856321430,
+        "sal" : 100000,
+        "email" : "dhanushree@gmail.com",
+        "address" : {
+                "city" : "banglore",
+                "place" : "nagrbhavi",
+                "pin" : 986542
+        }
+}
+{
+        "_id" : ObjectId("61b823594e1c0c2196d40259"),
+        "empid" : 108,
+        "name" : "CHANDAN SIR",
+        "age" : 28,
+        "phno" : 9563214785,
+        "sal" : 180000,
+        "email" : "chandansir@gmail.com",
+        "address" : {
+                "city" : "mysore",
+                "place" : "goodplace",
+                "pin" : 896541
+        }
+}
+{
+        "_id" : ObjectId("61b823d34e1c0c2196d4025a"),
+        "empid" : 109,
+        "name" : "ARPITHA MAM",
+        "age" : 26,
+        "phno" : 4569871235,
+        "sal" : 130000,
+        "email" : "arpithamam@gmail.com",
+        "address" : {
+                "city" : "belgavi",
+                "place" : "mustplace",
+                "pin" : 698745
+        }
+}
+{
+        "_id" : ObjectId("61b824574e1c0c2196d4025b"),
+        "empid" : 110,
+        "name" : "BABLOO",
+        "age" : 34,
+        "phno" : 1236987456,
+        "sal" : 75000,
+        "email" : "bubloogi@gmail.com",
+        "address" : {
+                "city" : "mambai",
+                "place" : "pune",
+                "pin" : 569885
+        }
+}
+> db.empl.find({$or:[ {'address.city':"chennai"},{sal:{$gt:110000}}  ]},{}).pretty();
+{
+        "_id" : ObjectId("61b820664e1c0c2196d40253"),
+        "empid" : 102,
+        "name" : "PRAVEEN",
+        "age" : 23,
+        "phno" : 9856321475,
+        "sal" : 120000,
+        "email" : "praveen110@gmail.com",
+        "address" : {
+                "city" : "gadag",
+                "place" : "karnataka",
+                "pin" : 582205
+        }
+}
+{
+        "_id" : ObjectId("61b822204e1c0c2196d40256"),
+        "empid" : 105,
+        "name" : "PAWAN",
+        "age" : 24,
+        "phno" : 8888888888,
+        "sal" : 200000,
+        "email" : "pawanmerabhai@gmail.com",
+        "address" : {
+                "city" : "chennai",
+                "place" : "hydrabad",
+                "pin" : 562542
+        }
+}
+{
+        "_id" : ObjectId("61b822864e1c0c2196d40257"),
+        "empid" : 106,
+        "name" : "ZEESHAN",
+        "age" : 23,
+        "phno" : 8088866608,
+        "sal" : 120000,
+        "email" : "zeeshanali888@gmail.com",
+        "address" : {
+                "city" : "gadag",
+                "place" : "meraBhai",
+                "pin" : 565698
+        }
+}
+{
+        "_id" : ObjectId("61b823594e1c0c2196d40259"),
+        "empid" : 108,
+        "name" : "CHANDAN SIR",
+        "age" : 28,
+        "phno" : 9563214785,
+        "sal" : 180000,
+        "email" : "chandansir@gmail.com",
+        "address" : {
+                "city" : "mysore",
+                "place" : "goodplace",
+                "pin" : 896541
+        }
+}
+{
+        "_id" : ObjectId("61b823d34e1c0c2196d4025a"),
+        "empid" : 109,
+        "name" : "ARPITHA MAM",
+        "age" : 26,
+        "phno" : 4569871235,
+        "sal" : 130000,
+        "email" : "arpithamam@gmail.com",
+        "address" : {
+                "city" : "belgavi",
+                "place" : "mustplace",
+                "pin" : 698745
+        }
+}
+> db.empl.find({$and:[  {'address.city':'bangalore'}, {'address.place':'karnataka'} ] },{}).pretty();
+>
+> db.empl.totalsize()
+uncaught exception: TypeError: db.empl.totalsize is not a function :
+@(shell):1:1
+> db.empl.totalsize()
+uncaught exception: TypeError: db.empl.totalsize is not a function :
+@(shell):1:1
+> db.empl.totalSize()
+73728
+> db.empl.find({email:{$exists:true } })
+{ "_id" : ObjectId("61b820004e1c0c2196d40252"), "empid" : 101, "name" : "PRATHIBHA", "age" : 21, "phno" : 5632879415, "sal" : 50000, "email" : "prathibha123@gmail.com", "address" : { "city" : "modhol", "place" : "uttar karnataka", "pin" : 561252 } }
+{ "_id" : ObjectId("61b820664e1c0c2196d40253"), "empid" : 102, "name" : "PRAVEEN", "age" : 23, "phno" : 9856321475, "sal" : 120000, "email" : "praveen110@gmail.com", "address" : { "city" : "gadag", "place" : "karnataka", "pin" : 582205 } }
+{ "_id" : ObjectId("61b820df4e1c0c2196d40254"), "empid" : 103, "name" : "SHIVAM", "age" : 25, "phno" : 978564123, "sal" : 70000, "email" : "shivam143@gmail.com", "address" : { "city" : "praveen's heart", "place" : "bihar", "pin" : 986574 } }
+{ "_id" : ObjectId("61b821314e1c0c2196d40255"), "empid" : 104, "name" : "OMKAR", "age" : 21, "phno" : 5896471235, "sal" : 110000, "email" : "omlar420@gmail.com", "address" : { "city" : "pune", "place" : "maharastra", "pin" : 569832 } }
+{ "_id" : ObjectId("61b822204e1c0c2196d40256"), "empid" : 105, "name" : "PAWAN", "age" : 24, "phno" : 8888888888, "sal" : 200000, "email" : "pawanmerabhai@gmail.com", "address" : { "city" : "chennai", "place" : "hydrabad", "pin" : 562542 } }
+{ "_id" : ObjectId("61b822864e1c0c2196d40257"), "empid" : 106, "name" : "ZEESHAN", "age" : 23, "phno" : 8088866608, "sal" : 120000, "email" : "zeeshanali888@gmail.com", "address" : { "city" : "gadag", "place" : "meraBhai", "pin" : 565698 } }
+{ "_id" : ObjectId("61b822f04e1c0c2196d40258"), "empid" : 107, "name" : "DHUNUSHREE", "age" : 23, "phno" : 9856321430, "sal" : 100000, "email" : "dhanushree@gmail.com", "address" : { "city" : "banglore", "place" : "nagrbhavi", "pin" : 986542 } }
+{ "_id" : ObjectId("61b823594e1c0c2196d40259"), "empid" : 108, "name" : "CHANDAN SIR", "age" : 28, "phno" : 9563214785, "sal" : 180000, "email" : "chandansir@gmail.com", "address" : { "city" : "mysore", "place" : "goodplace", "pin" : 896541 } }
+{ "_id" : ObjectId("61b823d34e1c0c2196d4025a"), "empid" : 109, "name" : "ARPITHA MAM", "age" : 26, "phno" : 4569871235, "sal" : 130000, "email" : "arpithamam@gmail.com", "address" : { "city" : "belgavi", "place" : "mustplace", "pin" : 698745 } }
+{ "_id" : ObjectId("61b824574e1c0c2196d4025b"), "empid" : 110, "name" : "BABLOO", "age" : 34, "phno" : 1236987456, "sal" : 75000, "email" : "bubloogi@gmail.com", "address" : { "city" : "mambai", "place" : "pune", "pin" : 569885 } }
+> db.empl.find({temp:{$exists:true } }).pretty()
+> db.empl.insert('temp':256)
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:21
+> db.empl.insert({'temp':256})
+WriteResult({ "nInserted" : 1 })
+> db.empl.find({temp:{$exists:true } }).pretty()
+{ "_id" : ObjectId("61b8339a4e1c0c2196d4025c"), "temp" : 256 }
+> db.empl.find({sal:{$exists:true}},{sal:1})
+{ "_id" : ObjectId("61b820004e1c0c2196d40252"), "sal" : 50000 }
+{ "_id" : ObjectId("61b820664e1c0c2196d40253"), "sal" : 120000 }
+{ "_id" : ObjectId("61b820df4e1c0c2196d40254"), "sal" : 70000 }
+{ "_id" : ObjectId("61b821314e1c0c2196d40255"), "sal" : 110000 }
+{ "_id" : ObjectId("61b822204e1c0c2196d40256"), "sal" : 200000 }
+{ "_id" : ObjectId("61b822864e1c0c2196d40257"), "sal" : 120000 }
+{ "_id" : ObjectId("61b822f04e1c0c2196d40258"), "sal" : 100000 }
+{ "_id" : ObjectId("61b823594e1c0c2196d40259"), "sal" : 180000 }
+{ "_id" : ObjectId("61b823d34e1c0c2196d4025a"), "sal" : 130000 }
+{ "_id" : ObjectId("61b824574e1c0c2196d4025b"), "sal" : 75000 }
+> db.empl.find({sal:{$exists:true}},{empid:1})
+{ "_id" : ObjectId("61b820004e1c0c2196d40252"), "empid" : 101 }
+{ "_id" : ObjectId("61b820664e1c0c2196d40253"), "empid" : 102 }
+{ "_id" : ObjectId("61b820df4e1c0c2196d40254"), "empid" : 103 }
+{ "_id" : ObjectId("61b821314e1c0c2196d40255"), "empid" : 104 }
+{ "_id" : ObjectId("61b822204e1c0c2196d40256"), "empid" : 105 }
+{ "_id" : ObjectId("61b822864e1c0c2196d40257"), "empid" : 106 }
+{ "_id" : ObjectId("61b822f04e1c0c2196d40258"), "empid" : 107 }
+{ "_id" : ObjectId("61b823594e1c0c2196d40259"), "empid" : 108 }
+{ "_id" : ObjectId("61b823d34e1c0c2196d4025a"), "empid" : 109 }
+{ "_id" : ObjectId("61b824574e1c0c2196d4025b"), "empid" : 110 }
+> db.empl.find({sal:{$type:number}},{sal:1})
+uncaught exception: ReferenceError: number is not defined :
+@(shell):1:20
+> db.empl.find({sal:{$type:'number'}},{sal:1})
+{ "_id" : ObjectId("61b820004e1c0c2196d40252"), "sal" : 50000 }
+{ "_id" : ObjectId("61b820664e1c0c2196d40253"), "sal" : 120000 }
+{ "_id" : ObjectId("61b820df4e1c0c2196d40254"), "sal" : 70000 }
+{ "_id" : ObjectId("61b821314e1c0c2196d40255"), "sal" : 110000 }
+{ "_id" : ObjectId("61b822204e1c0c2196d40256"), "sal" : 200000 }
+{ "_id" : ObjectId("61b822864e1c0c2196d40257"), "sal" : 120000 }
+{ "_id" : ObjectId("61b822f04e1c0c2196d40258"), "sal" : 100000 }
+{ "_id" : ObjectId("61b823594e1c0c2196d40259"), "sal" : 180000 }
+{ "_id" : ObjectId("61b823d34e1c0c2196d4025a"), "sal" : 130000 }
+{ "_id" : ObjectId("61b824574e1c0c2196d4025b"), "sal" : 75000 }
+> db.empl.find({name:{$type:'string'}},{email:1})
+{ "_id" : ObjectId("61b820004e1c0c2196d40252"), "email" : "prathibha123@gmail.com" }
+{ "_id" : ObjectId("61b820664e1c0c2196d40253"), "email" : "praveen110@gmail.com" }
+{ "_id" : ObjectId("61b820df4e1c0c2196d40254"), "email" : "shivam143@gmail.com" }
+{ "_id" : ObjectId("61b821314e1c0c2196d40255"), "email" : "omlar420@gmail.com" }
+{ "_id" : ObjectId("61b822204e1c0c2196d40256"), "email" : "pawanmerabhai@gmail.com" }
+{ "_id" : ObjectId("61b822864e1c0c2196d40257"), "email" : "zeeshanali888@gmail.com" }
+{ "_id" : ObjectId("61b822f04e1c0c2196d40258"), "email" : "dhanushree@gmail.com" }
+{ "_id" : ObjectId("61b823594e1c0c2196d40259"), "email" : "chandansir@gmail.com" }
+{ "_id" : ObjectId("61b823d34e1c0c2196d4025a"), "email" : "arpithamam@gmail.com" }
+{ "_id" : ObjectId("61b824574e1c0c2196d4025b"), "email" : "bubloogi@gmail.com" }
+> db.empl.find({sal:{$type:'string'}},{})
+> db.empl.find({id:{$type:'number'}},{})
+> db.empl.find({empid:{$type:'number'}},{})
+{ "_id" : ObjectId("61b820004e1c0c2196d40252"), "empid" : 101, "name" : "PRATHIBHA", "age" : 21, "phno" : 5632879415, "sal" : 50000, "email" : "prathibha123@gmail.com", "address" : { "city" : "modhol", "place" : "uttar karnataka", "pin" : 561252 } }
+{ "_id" : ObjectId("61b820664e1c0c2196d40253"), "empid" : 102, "name" : "PRAVEEN", "age" : 23, "phno" : 9856321475, "sal" : 120000, "email" : "praveen110@gmail.com", "address" : { "city" : "gadag", "place" : "karnataka", "pin" : 582205 } }
+{ "_id" : ObjectId("61b820df4e1c0c2196d40254"), "empid" : 103, "name" : "SHIVAM", "age" : 25, "phno" : 978564123, "sal" : 70000, "email" : "shivam143@gmail.com", "address" : { "city" : "praveen's heart", "place" : "bihar", "pin" : 986574 } }
+{ "_id" : ObjectId("61b821314e1c0c2196d40255"), "empid" : 104, "name" : "OMKAR", "age" : 21, "phno" : 5896471235, "sal" : 110000, "email" : "omlar420@gmail.com", "address" : { "city" : "pune", "place" : "maharastra", "pin" : 569832 } }
+{ "_id" : ObjectId("61b822204e1c0c2196d40256"), "empid" : 105, "name" : "PAWAN", "age" : 24, "phno" : 8888888888, "sal" : 200000, "email" : "pawanmerabhai@gmail.com", "address" : { "city" : "chennai", "place" : "hydrabad", "pin" : 562542 } }
+{ "_id" : ObjectId("61b822864e1c0c2196d40257"), "empid" : 106, "name" : "ZEESHAN", "age" : 23, "phno" : 8088866608, "sal" : 120000, "email" : "zeeshanali888@gmail.com", "address" : { "city" : "gadag", "place" : "meraBhai", "pin" : 565698 } }
+{ "_id" : ObjectId("61b822f04e1c0c2196d40258"), "empid" : 107, "name" : "DHUNUSHREE", "age" : 23, "phno" : 9856321430, "sal" : 100000, "email" : "dhanushree@gmail.com", "address" : { "city" : "banglore", "place" : "nagrbhavi", "pin" : 986542 } }
+{ "_id" : ObjectId("61b823594e1c0c2196d40259"), "empid" : 108, "name" : "CHANDAN SIR", "age" : 28, "phno" : 9563214785, "sal" : 180000, "email" : "chandansir@gmail.com", "address" : { "city" : "mysore", "place" : "goodplace", "pin" : 896541 } }
+{ "_id" : ObjectId("61b823d34e1c0c2196d4025a"), "empid" : 109, "name" : "ARPITHA MAM", "age" : 26, "phno" : 4569871235, "sal" : 130000, "email" : "arpithamam@gmail.com", "address" : { "city" : "belgavi", "place" : "mustplace", "pin" : 698745 } }
+{ "_id" : ObjectId("61b824574e1c0c2196d4025b"), "empid" : 110, "name" : "BABLOO", "age" : 34, "phno" : 1236987456, "sal" : 75000, "email" : "bubloogi@gmail.com", "address" : { "city" : "mambai", "place" : "pune", "pin" : 569885 } }
+> db.empl.find({empid:{$type:'number'}},{}).pretty()
+{
+        "_id" : ObjectId("61b820004e1c0c2196d40252"),
+        "empid" : 101,
+        "name" : "PRATHIBHA",
+        "age" : 21,
+        "phno" : 5632879415,
+        "sal" : 50000,
+        "email" : "prathibha123@gmail.com",
+        "address" : {
+                "city" : "modhol",
+                "place" : "uttar karnataka",
+                "pin" : 561252
+        }
+}
+{
+        "_id" : ObjectId("61b820664e1c0c2196d40253"),
+        "empid" : 102,
+        "name" : "PRAVEEN",
+        "age" : 23,
+        "phno" : 9856321475,
+        "sal" : 120000,
+        "email" : "praveen110@gmail.com",
+        "address" : {
+                "city" : "gadag",
+                "place" : "karnataka",
+                "pin" : 582205
+        }
+}
+{
+        "_id" : ObjectId("61b820df4e1c0c2196d40254"),
+        "empid" : 103,
+        "name" : "SHIVAM",
+        "age" : 25,
+        "phno" : 978564123,
+        "sal" : 70000,
+        "email" : "shivam143@gmail.com",
+        "address" : {
+                "city" : "praveen's heart",
+                "place" : "bihar",
+                "pin" : 986574
+        }
+}
+{
+        "_id" : ObjectId("61b821314e1c0c2196d40255"),
+        "empid" : 104,
+        "name" : "OMKAR",
+        "age" : 21,
+        "phno" : 5896471235,
+        "sal" : 110000,
+        "email" : "omlar420@gmail.com",
+        "address" : {
+                "city" : "pune",
+                "place" : "maharastra",
+                "pin" : 569832
+        }
+}
+{
+        "_id" : ObjectId("61b822204e1c0c2196d40256"),
+        "empid" : 105,
+        "name" : "PAWAN",
+        "age" : 24,
+        "phno" : 8888888888,
+        "sal" : 200000,
+        "email" : "pawanmerabhai@gmail.com",
+        "address" : {
+                "city" : "chennai",
+                "place" : "hydrabad",
+                "pin" : 562542
+        }
+}
+{
+        "_id" : ObjectId("61b822864e1c0c2196d40257"),
+        "empid" : 106,
+        "name" : "ZEESHAN",
+        "age" : 23,
+        "phno" : 8088866608,
+        "sal" : 120000,
+        "email" : "zeeshanali888@gmail.com",
+        "address" : {
+                "city" : "gadag",
+                "place" : "meraBhai",
+                "pin" : 565698
+        }
+}
+{
+        "_id" : ObjectId("61b822f04e1c0c2196d40258"),
+        "empid" : 107,
+        "name" : "DHUNUSHREE",
+        "age" : 23,
+        "phno" : 9856321430,
+        "sal" : 100000,
+        "email" : "dhanushree@gmail.com",
+        "address" : {
+                "city" : "banglore",
+                "place" : "nagrbhavi",
+                "pin" : 986542
+        }
+}
+{
+        "_id" : ObjectId("61b823594e1c0c2196d40259"),
+        "empid" : 108,
+        "name" : "CHANDAN SIR",
+        "age" : 28,
+        "phno" : 9563214785,
+        "sal" : 180000,
+        "email" : "chandansir@gmail.com",
+        "address" : {
+                "city" : "mysore",
+                "place" : "goodplace",
+                "pin" : 896541
+        }
+}
+{
+        "_id" : ObjectId("61b823d34e1c0c2196d4025a"),
+        "empid" : 109,
+        "name" : "ARPITHA MAM",
+        "age" : 26,
+        "phno" : 4569871235,
+        "sal" : 130000,
+        "email" : "arpithamam@gmail.com",
+        "address" : {
+                "city" : "belgavi",
+                "place" : "mustplace",
+                "pin" : 698745
+        }
+}
+{
+        "_id" : ObjectId("61b824574e1c0c2196d4025b"),
+        "empid" : 110,
+        "name" : "BABLOO",
+        "age" : 34,
+        "phno" : 1236987456,
+        "sal" : 75000,
+        "email" : "bubloogi@gmail.com",
+        "address" : {
+                "city" : "mambai",
+                "place" : "pune",
+                "pin" : 569885
+        }
+}
+> db.empl.find({_id:{$type:'objectId'}},{email:1}).pretty()
+{
+        "_id" : ObjectId("61b820004e1c0c2196d40252"),
+        "email" : "prathibha123@gmail.com"
+}
+{
+        "_id" : ObjectId("61b820664e1c0c2196d40253"),
+        "email" : "praveen110@gmail.com"
+}
+{
+        "_id" : ObjectId("61b820df4e1c0c2196d40254"),
+        "email" : "shivam143@gmail.com"
+}
+{
+        "_id" : ObjectId("61b821314e1c0c2196d40255"),
+        "email" : "omlar420@gmail.com"
+}
+{
+        "_id" : ObjectId("61b822204e1c0c2196d40256"),
+        "email" : "pawanmerabhai@gmail.com"
+}
+{
+        "_id" : ObjectId("61b822864e1c0c2196d40257"),
+        "email" : "zeeshanali888@gmail.com"
+}
+{
+        "_id" : ObjectId("61b822f04e1c0c2196d40258"),
+        "email" : "dhanushree@gmail.com"
+}
+{
+        "_id" : ObjectId("61b823594e1c0c2196d40259"),
+        "email" : "chandansir@gmail.com"
+}
+{
+        "_id" : ObjectId("61b823d34e1c0c2196d4025a"),
+        "email" : "arpithamam@gmail.com"
+}
+{
+        "_id" : ObjectId("61b824574e1c0c2196d4025b"),
+        "email" : "bubloogi@gmail.com"
+}
+{ "_id" : ObjectId("61b8339a4e1c0c2196d4025c") }
+> db.empl.find({_id:{$type:'object'}},{_id:1}).pretty()
+> db.empl.find({address:{$type:'object'}},{address:1}).pretty()
+{
+        "_id" : ObjectId("61b820004e1c0c2196d40252"),
+        "address" : {
+                "city" : "modhol",
+                "place" : "uttar karnataka",
+                "pin" : 561252
+        }
+}
+{
+        "_id" : ObjectId("61b820664e1c0c2196d40253"),
+        "address" : {
+                "city" : "gadag",
+                "place" : "karnataka",
+                "pin" : 582205
+        }
+}
+{
+        "_id" : ObjectId("61b820df4e1c0c2196d40254"),
+        "address" : {
+                "city" : "praveen's heart",
+                "place" : "bihar",
+                "pin" : 986574
+        }
+}
+{
+        "_id" : ObjectId("61b821314e1c0c2196d40255"),
+        "address" : {
+                "city" : "pune",
+                "place" : "maharastra",
+                "pin" : 569832
+        }
+}
+{
+        "_id" : ObjectId("61b822204e1c0c2196d40256"),
+        "address" : {
+                "city" : "chennai",
+                "place" : "hydrabad",
+                "pin" : 562542
+        }
+}
+{
+        "_id" : ObjectId("61b822864e1c0c2196d40257"),
+        "address" : {
+                "city" : "gadag",
+                "place" : "meraBhai",
+                "pin" : 565698
+        }
+}
+{
+        "_id" : ObjectId("61b822f04e1c0c2196d40258"),
+        "address" : {
+                "city" : "banglore",
+                "place" : "nagrbhavi",
+                "pin" : 986542
+        }
+}
+{
+        "_id" : ObjectId("61b823594e1c0c2196d40259"),
+        "address" : {
+                "city" : "mysore",
+                "place" : "goodplace",
+                "pin" : 896541
+        }
+}
+{
+        "_id" : ObjectId("61b823d34e1c0c2196d4025a"),
+        "address" : {
+                "city" : "belgavi",
+                "place" : "mustplace",
+                "pin" : 698745
+        }
+}
+{
+        "_id" : ObjectId("61b824574e1c0c2196d4025b"),
+        "address" : {
+                "city" : "mambai",
+                "place" : "pune",
+                "pin" : 569885
+        }
+}
+> db.empl.find({address:{$type:'object'}},{address:1, _id:0}).pretty()
+{
+        "address" : {
+                "city" : "modhol",
+                "place" : "uttar karnataka",
+                "pin" : 561252
+        }
+}
+{
+        "address" : {
+                "city" : "gadag",
+                "place" : "karnataka",
+                "pin" : 582205
+        }
+}
+{
+        "address" : {
+                "city" : "praveen's heart",
+                "place" : "bihar",
+                "pin" : 986574
+        }
+}
+{
+        "address" : {
+                "city" : "pune",
+                "place" : "maharastra",
+                "pin" : 569832
+        }
+}
+{
+        "address" : {
+                "city" : "chennai",
+                "place" : "hydrabad",
+                "pin" : 562542
+        }
+}
+{
+        "address" : {
+                "city" : "gadag",
+                "place" : "meraBhai",
+                "pin" : 565698
+        }
+}
+{
+        "address" : {
+                "city" : "banglore",
+                "place" : "nagrbhavi",
+                "pin" : 986542
+        }
+}
+{
+        "address" : {
+                "city" : "mysore",
+                "place" : "goodplace",
+                "pin" : 896541
+        }
+}
+{
+        "address" : {
+                "city" : "belgavi",
+                "place" : "mustplace",
+                "pin" : 698745
+        }
+}
+{ "address" : { "city" : "mambai", "place" : "pune", "pin" : 569885 } }
+> db.empl.find({address:{$type:'object'}},{address:1, _id:0}).sort().pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "Expected field sortto be of type object",
+        "code" : 14,
+        "codeName" : "TypeMismatch"
+}
+> db.empl.findOne();
+{
+        "_id" : ObjectId("61b820004e1c0c2196d40252"),
+        "empid" : 101,
+        "name" : "PRATHIBHA",
+        "age" : 21,
+        "phno" : 5632879415,
+        "sal" : 50000,
+        "email" : "prathibha123@gmail.com",
+        "address" : {
+                "city" : "modhol",
+                "place" : "uttar karnataka",
+                "pin" : 561252
+        }
+}
+> db.empl.findOne({}{email:1});
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:18
+> db.empl.findOne({},{email:1});
+{
+        "_id" : ObjectId("61b820004e1c0c2196d40252"),
+        "email" : "prathibha123@gmail.com"
+}
+> db.empl.find({},{name:1}).limit(3).pretty()
+{ "_id" : ObjectId("61b820004e1c0c2196d40252"), "name" : "PRATHIBHA" }
+{ "_id" : ObjectId("61b820664e1c0c2196d40253"), "name" : "PRAVEEN" }
+{ "_id" : ObjectId("61b820df4e1c0c2196d40254"), "name" : "SHIVAM" }
+> db.empl.find({},{name:1}).count().pretty()
+uncaught exception: TypeError: db.empl.find(...).count(...).pretty is not a function :
+@(shell):1:1
+> db.empl.find({},{}).count().pretty()
+uncaught exception: TypeError: db.empl.find(...).count(...).pretty is not a function :
+@(shell):1:1
+> db.empl.find({},{email:1}).count().pretty()
+uncaught exception: TypeError: db.empl.find(...).count(...).pretty is not a function :
+@(shell):1:1
+> db.empl.find({},{email:1}).count()
+11
+> db.empl.count
+function(query, options) {
+    const cmd =
+        Object.assign({count: this.getName(), query: this._massageObject(query || {})}, options);
+    if (cmd.readConcern) {
+        cmd.readConcern = {level: cmd.readConcern};
+    }
+    const res = this._db.runReadCommand(cmd);
+    if (!res.ok) {
+        throw _getErrorWithCode(res, "count failed: " + tojson(res));
+    }
+    return res.n;
+}
+>
+>
+>
+> db.empl.count()
+11
+> db.empl.find({},{empid:1}).sort(-1)
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "Expected field sortto be of type object",
+        "code" : 14,
+        "codeName" : "TypeMismatch"
+}
+> db.empl.find({},{empid:1}).sort({empid:-1})
+{ "_id" : ObjectId("61b824574e1c0c2196d4025b"), "empid" : 110 }
+{ "_id" : ObjectId("61b823d34e1c0c2196d4025a"), "empid" : 109 }
+{ "_id" : ObjectId("61b823594e1c0c2196d40259"), "empid" : 108 }
+{ "_id" : ObjectId("61b822f04e1c0c2196d40258"), "empid" : 107 }
+{ "_id" : ObjectId("61b822864e1c0c2196d40257"), "empid" : 106 }
+{ "_id" : ObjectId("61b822204e1c0c2196d40256"), "empid" : 105 }
+{ "_id" : ObjectId("61b821314e1c0c2196d40255"), "empid" : 104 }
+{ "_id" : ObjectId("61b820df4e1c0c2196d40254"), "empid" : 103 }
+{ "_id" : ObjectId("61b820664e1c0c2196d40253"), "empid" : 102 }
+{ "_id" : ObjectId("61b820004e1c0c2196d40252"), "empid" : 101 }
+{ "_id" : ObjectId("61b8339a4e1c0c2196d4025c") }
+> db.empl.find({},{name:1}).sort({sal:-1}).limit(1).pretty()
+{ "_id" : ObjectId("61b822204e1c0c2196d40256"), "name" : "PAWAN" }
+>

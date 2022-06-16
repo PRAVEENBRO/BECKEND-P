@@ -1,0 +1,32 @@
+<div class=" card  mt-5 p-5 container " style="width:35rem">
+
+    <h1 style="font-family:cursive ;">Add Product</h1>
+
+    <form action="/products/add-product" method="POST" class="">
+
+{{!-- 
+        <div class="mb-3">
+            <label class="form-label" style="font-family:cursive ;">Product ID</label>
+            <input type="number" class="form-control" placeholder="Enter product id" id="_id" name="_id">
+        </div> --}}
+
+        <div class="mb-3">
+            <label class="form-label" style="font-family:cursive ;">Product name</label>
+            <input type="text" class="form-control" placeholder="Enter product name" id="pName" name="pName">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" style="font-family:cursive ;">Product description</label>
+            <input type="text" class="form-control" placeholder="Enter product discription" id="pDesc" name="pDesc">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" style="font-family:cursive ;">Product prize</label>
+            <input type="number" class="form-control" placeholder="Enter product prize" id="pPrice" name="pPrice">
+        </div>
+        
+        <button type="submit" class="btn btn-outline-dark">Submit</button>
+    </form>
+
+
+</div>

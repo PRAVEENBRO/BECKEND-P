@@ -1,0 +1,220 @@
+
+========================== group & having clause ====================
+1)
+
+mysql> select deptno, count(*) from emp group by deptno having count(deptno)>2;
++--------+----------+
+| deptno | count(*) |
++--------+----------+
+|     20 |        5 |
+|     30 |        6 |
+|     10 |        3 |
++--------+----------+
+
+
+
+2)
+  mysql> select ename,count(*) from emp group by ename having count(*)>1;
+Empty set (0.00 sec)
+
+
+
+3)
+
+mysql> select ename, count(*) from emp group by sal having count(*)>1;
++-------+----------+
+| ename | count(*) |
++-------+----------+
+| WARD  |        2 |
+| SCOTT |        2 |
++-------+----------+
+
+
+
+4)
+
+mysql> select deptno, count(*) from emp where job='clerk' group by deptno ;
++--------+----------+
+| deptno | count(*) |
++--------+----------+
+|     20 |        2 |
+|     30 |        1 |
+|     10 |        1 |
++--------+----------+
+
+
+
+5)
+
+
+mysql> select deptno, count(*) from emp where job not in('president')  group by deptno;
++--------+----------+
+| deptno | count(*) |
++--------+----------+
+|     20 |        5 |
+|     30 |        6 |
+|     10 |        2 |
++--------+----------+
+
+
+6)
+
+mysql> select job, sum(sal) from emp group by job;
++-----------+----------+
+| job       | sum(sal) |
++-----------+----------+
+| CLERK     |     4150 |
+| SALESMAN  |     5600 |
+| MANAGER   |     8275 |
+| ANALYST   |     6000 |
+| PRESIDENT |     5000 |
++-----------+----------+
+
+7)
+
+mysql> select deptno,count(*) from emp where job='manager' group by deptno;
++--------+----------+
+| deptno | count(*) |
++--------+----------+
+|     20 |        1 |
+|     30 |        1 |
+|     10 |        1 |
++--------+----------+
+
+
+
+===============================  having ===============================
+
+
+1)
+mysql> select deptno, count(*) from emp where job='clerk'  group by deptno  having count(*)<2;
++--------+----------+
+| deptno | count(*) |
++--------+----------+
+|     30 |        1 |
+|     10 |        1 |
++--------+----------+
+
+2)
+
+mysql> select deptno, sum(sal) from emp  group by deptno having count(*)>4;
++--------+----------+
+| deptno | sum(sal) |
++--------+----------+
+|     20 |    10875 |
+|     30 |     9400 |
++--------+----------+
+
+3)
+
+mysql> select deptno, count(*), sum(sal) from emp group by deptno having sum(sal)>6000;
++--------+----------+----------+
+| deptno | count(*) | sum(sal) |
++--------+----------+----------+
+|     20 |        5 |    10875 |
+|     30 |        6 |     9400 |
+|     10 |        3 |     8750 |
++--------+----------+----------+
+
+
+
+4)
+mysql> select deptno, count(*) from emp where job='manager'  group by deptno having count(*)=2;
+Empty set (0.00 sec)
+
+mysql> select deptno, count(*) from emp where job='clerk'  group by deptno having count(*)=2;
++--------+----------+
+| deptno | count(*) |
++--------+----------+
+|     20 |        2 |
++--------+----------+
+1 row in set (0.00 sec)
+
+5)
+
+
+
+mysql> select job, max(sal) from emp group by job having max(sal)>2600;
++-----------+----------+
+| job       | max(sal) |
++-----------+----------+
+| MANAGER   |     2975 |
+| ANALYST   |     3000 |
+| PRESIDENT |     5000 |
++-----------+----------+
+
+6)
+
+mysql> select sal from emp group by sal having count(sal)>1;
++------+
+| sal  |
++------+
+| 1250 |
+| 3000 |
++------+
+
+7)
+
+
+mysql> select hiredate from emp group by hiredate having count(hiredate)>1;
++------------+
+| hiredate   |
++------------+
+| 1981-12-03 |
++------------+
+
+8)
+
+mysql> select avg(sal), deptno from emp group by sal having avg(sal)<3000;
++-----------+--------+
+| avg(sal)  | deptno |
++-----------+--------+
+|  800.0000 |     20 |
+| 1600.0000 |     30 |
+| 1250.0000 |     30 |
+| 2975.0000 |     20 |
+| 2850.0000 |     30 |
+| 2450.0000 |     10 |
+| 1500.0000 |     30 |
+| 1100.0000 |     20 |
+|  950.0000 |     30 |
+| 1300.0000 |     10 |
++-----------+--------+
+
+9)
+
+mysql> select deptno from emp where ename like '%a%' or ename like '%s'  group by deptno  having count(*)>3;
++--------+
+| deptno |
++--------+
+|     30 |
++--------+
+
+10)
+
+
+mysql> select job, max(sal) , min(sal) from emp group by job having (min(sal)>1000 and max(sal)<5000);
++----------+----------+----------+
+| job      | max(sal) | min(sal) |
++----------+----------+----------+
+| SALESMAN |     1600 |     1250 |
+| MANAGER  |     2975 |     2450 |
+| ANALYST  |     3000 |     3000 |
++----------+----------+----------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

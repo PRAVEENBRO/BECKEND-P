@@ -1,0 +1,351 @@
+mysql> tee C:\Users\NAVEEN\Desktop\TE Training\MySQL\sql
+Logging to file 'C:\Users\NAVEEN\Desktop\TE Training\MySQL\sql'
+
+mysql> select * from epm;
+ERROR 1146 (42S02): Table 'techno.epm' doesn't exist
+mysql> select * from emp;
++-------+--------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME  | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+--------+-----------+------------+------+------+------+--------+
+|  7369 | SMITH  | CLERK     | 1980-12-17 | 7902 |  800 | NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 1981-02-20 | 7698 | 1600 |  300 |     30 |
+|  7521 | WARD   | SALESMAN  | 1981-02-22 | 7698 | 1250 |  500 |     30 |
+|  7566 | JONES  | MANAGER   | 1981-04-02 | 7839 | 2975 | NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 1981-09-28 | 7698 | 1250 | 1400 |     30 |
+|  7698 | BLAKE  | MANAGER   | 1981-05-01 | 7839 | 2850 | NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 1981-06-09 | 7839 | 2450 | NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 1987-04-19 | 7566 | 3000 | NULL |     20 |
+|  7839 | KING   | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 1981-09-08 | 7698 | 1500 |    0 |     30 |
+|  7876 | ADAMS  | CLERK     | 1987-05-23 | 7788 | 1100 | NULL |     20 |
+|  7900 | JAMES  | CLERK     | 1981-12-03 | 7698 |  950 | NULL |     30 |
+|  7902 | FORD   | ANALYST   | 1981-12-03 | 7566 | 3000 | NULL |     20 |
+|  7934 | MILLER | CLERK     | 1982-01-23 | 7782 | 1300 | NULL |     10 |
++-------+--------+-----------+------------+------+------+------+--------+
+
+
+
+2)
+
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 21
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> Logging to file 'C:\Users\NAVEEN\Desktop\TE Training\MySQL\sql'
+    -> Logging to file 'C:\Users\NAVEEN\Desktop\TE Training\MySQL\sql';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Logging to file 'C:\Users\NAVEEN\Desktop\TE Training\MySQL\sql'
+Logging to file ' at line 1
+mysql>
+mysql>
+mysql>
+mysql> select count(*) from emp where(select job from emp where ename='clark'  );
+ERROR 1046 (3D000): No database selected
+mysql> show database
+    -> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database
+show database' at line 1
+mysql> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| devil              |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| techno             |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use techno;
+Database changed
+mysql> select count(*) from emp where(select job from emp where ename='clark'  );
++----------+
+| count(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from emp where( select job from emp where ename='clark');
++----------+
+| count(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select * from emp;
++-------+--------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME  | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+--------+-----------+------------+------+------+------+--------+
+|  7369 | SMITH  | CLERK     | 1980-12-17 | 7902 |  800 | NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 1981-02-20 | 7698 | 1600 |  300 |     30 |
+|  7521 | WARD   | SALESMAN  | 1981-02-22 | 7698 | 1250 |  500 |     30 |
+|  7566 | JONES  | MANAGER   | 1981-04-02 | 7839 | 2975 | NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 1981-09-28 | 7698 | 1250 | 1400 |     30 |
+|  7698 | BLAKE  | MANAGER   | 1981-05-01 | 7839 | 2850 | NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 1981-06-09 | 7839 | 2450 | NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 1987-04-19 | 7566 | 3000 | NULL |     20 |
+|  7839 | KING   | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 1981-09-08 | 7698 | 1500 |    0 |     30 |
+|  7876 | ADAMS  | CLERK     | 1987-05-23 | 7788 | 1100 | NULL |     20 |
+|  7900 | JAMES  | CLERK     | 1981-12-03 | 7698 |  950 | NULL |     30 |
+|  7902 | FORD   | ANALYST   | 1981-12-03 | 7566 | 3000 | NULL |     20 |
+|  7934 | MILLER | CLERK     | 1982-01-23 | 7782 | 1300 | NULL |     10 |
++-------+--------+-----------+------------+------+------+------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select count(*) from emp where deptno=( select job from emp where ename='clark');
++----------+
+| count(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from emp where deptno=( select deptno from emp where ename='clark');
++----------+
+| count(*) |
++----------+
+|        3 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select ename sal from emp where sal = (select sal from emp where ename='turner');
++--------+
+| sal    |
++--------+
+| TURNER |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select ename ,sal from emp where sal = (select sal from emp where ename='turner');
++--------+------+
+| ename  | sal  |
++--------+------+
+| TURNER | 1500 |
++--------+------+
+1 row in set (0.00 sec)
+
+mysql> select* from emp where hiredate=(select hiredate from emp where ename='king');
++-------+-------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+-------+-----------+------------+------+------+------+--------+
+|  7839 | KING  | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
++-------+-------+-----------+------------+------+------+------+--------+
+1 row in set (0.01 sec)
+
+mysql> select* from emp where hiredate in(select hiredate from emp where ename='king');
++-------+-------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+-------+-----------+------------+------+------+------+--------+
+|  7839 | KING  | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
++-------+-------+-----------+------------+------+------+------+--------+
+1 row in set (0.01 sec)
+
+mysql> select* from emp where sal in(select sal from emp where ename='king');
++-------+-------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+-------+-----------+------------+------+------+------+--------+
+|  7839 | KING  | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
++-------+-------+-----------+------------+------+------+------+--------+
+1 row in set (0.00 sec)
+
+mysql> ^C
+mysql>
+mysql>
+mysql> clrscr
+    -> clrscr;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'clrscr
+clrscr' at line 1
+mysql> select ename, sal, deptno from emp where  sal>(SELECT SAL FROM EMP WHERE ENAME='KING' AND DEPTNO = 20);
+Empty set (0.00 sec)
+
+mysql> select ename, sal, deptno from emp where Logging to file 'C:\Users\NAVEEN\Desktop\TE Training\MySQL\sql' sal>(SELECT SAL FROM EMP WHERE ENAME='KING');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to file 'C:\Users\NAVEEN\Desktop\TE Training\MySQL\sql' sal>(SELECT SAL FROM EMP' at line 1
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> select * from emp where sal<(select sal from emp where job='clerk' and ename='king');
+Empty set (0.00 sec)
+
+mysql> select * from emp where sal<(select sal from emp where job='clerk' and ename='king');
+Empty set (0.00 sec)
+
+mysql>
+mysql>
+mysql> select ename,sal, empno from emp where hiredate>(select hiredate from emp where ename='smith') and  hiredate< (select hiredate from emp where ename='blake');
++-------+------+-------+
+| ename | sal  | empno |
++-------+------+-------+
+| ALLEN | 1600 |  7499 |
+| WARD  | 1250 |  7521 |
+| JONES | 2975 |  7566 |
++-------+------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select * from emp where hiredate <(select hiredate from emp where ename='scott') and (select deptno from emp where ename='scott');
++-------+--------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME  | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+--------+-----------+------------+------+------+------+--------+
+|  7369 | SMITH  | CLERK     | 1980-12-17 | 7902 |  800 | NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 1981-02-20 | 7698 | 1600 |  300 |     30 |
+|  7521 | WARD   | SALESMAN  | 1981-02-22 | 7698 | 1250 |  500 |     30 |
+|  7566 | JONES  | MANAGER   | 1981-04-02 | 7839 | 2975 | NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 1981-09-28 | 7698 | 1250 | 1400 |     30 |
+|  7698 | BLAKE  | MANAGER   | 1981-05-01 | 7839 | 2850 | NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 1981-06-09 | 7839 | 2450 | NULL |     10 |
+|  7839 | KING   | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 1981-09-08 | 7698 | 1500 |    0 |     30 |
+|  7900 | JAMES  | CLERK     | 1981-12-03 | 7698 |  950 | NULL |     30 |
+|  7902 | FORD   | ANALYST   | 1981-12-03 | 7566 | 3000 | NULL |     20 |
+|  7934 | MILLER | CLERK     | 1982-01-23 | 7782 | 1300 | NULL |     10 |
++-------+--------+-----------+------------+------+------+------+--------+
+12 rows in set (0.00 sec)
+
+mysql> select * from emp  where job=(select job from emp where ename= 'miller' ) and deptno in (10,20);
++-------+--------+-------+------------+------+------+------+--------+
+| EMPNO | ENAME  | JOB   | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+--------+-------+------------+------+------+------+--------+
+|  7369 | SMITH  | CLERK | 1980-12-17 | 7902 |  800 | NULL |     20 |
+|  7876 | ADAMS  | CLERK | 1987-05-23 | 7788 | 1100 | NULL |     20 |
+|  7934 | MILLER | CLERK | 1982-01-23 | 7782 | 1300 | NULL |     10 |
++-------+--------+-------+------------+------+------+------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from emp where deptno=30 and sal>(select sal from emp where ename='blake');
+Empty set (0.00 sec)
+
+mysql> select * from emp where deptno=30 and sal<(select sal from emp where ename='blake');
++-------+--------+----------+------------+------+------+------+--------+
+| EMPNO | ENAME  | JOB      | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+--------+----------+------------+------+------+------+--------+
+|  7499 | ALLEN  | SALESMAN | 1981-02-20 | 7698 | 1600 |  300 |     30 |
+|  7521 | WARD   | SALESMAN | 1981-02-22 | 7698 | 1250 |  500 |     30 |
+|  7654 | MARTIN | SALESMAN | 1981-09-28 | 7698 | 1250 | 1400 |     30 |
+|  7844 | TURNER | SALESMAN | 1981-09-08 | 7698 | 1500 |    0 |     30 |
+|  7900 | JAMES  | CLERK    | 1981-12-03 | 7698 |  950 | NULL |     30 |
++-------+--------+----------+------------+------+------+------+--------+
+5 rows in set (0.00 sec)
+
+mysql> CREATE TABLE DEPT
+    ->        (DEPTNO INT,
+    ->         DNAME VARCHAR(14),
+    ->         LOC VARCHAR(13) );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> INSERT INTO DEPT VALUES (10, 'ACCOUNTING', 'NEW YORK');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO DEPT VALUES (20, 'RESEARCH',   'DALLAS');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO DEPT VALUES (30, 'SALES',      'CHICAGO');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO DEPT VALUES (40, 'OPERATIONS', 'BOSTON');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from dept;
++--------+------------+----------+
+| DEPTNO | DNAME      | LOC      |
++--------+------------+----------+
+|     10 | ACCOUNTING | NEW YORK |
+|     20 | RESEARCH   | DALLAS   |
+|     30 | SALES      | CHICAGO  |
+|     40 | OPERATIONS | BOSTON   |
++--------+------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select dname from dept where deptno=(select deptno from emp where ename= 'miller');
++------------+
+| dname      |
++------------+
+| ACCOUNTING |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select * from emp where deptno=(select deptno from dept where dname='research');
++-------+-------+---------+------------+------+------+------+--------+
+| EMPNO | ENAME | JOB     | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+-------+---------+------------+------+------+------+--------+
+|  7369 | SMITH | CLERK   | 1980-12-17 | 7902 |  800 | NULL |     20 |
+|  7566 | JONES | MANAGER | 1981-04-02 | 7839 | 2975 | NULL |     20 |
+|  7788 | SCOTT | ANALYST | 1987-04-19 | 7566 | 3000 | NULL |     20 |
+|  7876 | ADAMS | CLERK   | 1987-05-23 | 7788 | 1100 | NULL |     20 |
+|  7902 | FORD  | ANALYST | 1981-12-03 | 7566 | 3000 | NULL |     20 |
++-------+-------+---------+------------+------+------+------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select loc from dept where deptno=(select deptno from emp where empid=7902);
+ERROR 1054 (42S22): Unknown column 'empid' in 'where clause'
+mysql> select loc from dept where deptno=(select deptno from emp where empno=7902);
++--------+
+| loc    |
++--------+
+| DALLAS |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from emp where hiredate=(select hiredate from emp where ename='smith' ) and (select deptno from dept where dname='accounting');
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
+
+
+
+mysql> select * from emp;
++-------+--------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME  | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+--------+-----------+------------+------+------+------+--------+
+|  7369 | SMITH  | CLERK     | 1980-12-17 | 7902 |  800 | NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 1981-02-20 | 7698 | 1600 |  300 |     30 |
+|  7521 | WARD   | SALESMAN  | 1981-02-22 | 7698 | 1250 |  500 |     30 |
+|  7566 | JONES  | MANAGER   | 1981-04-02 | 7839 | 2975 | NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 1981-09-28 | 7698 | 1250 | 1400 |     30 |
+|  7698 | BLAKE  | MANAGER   | 1981-05-01 | 7839 | 2850 | NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 1981-06-09 | 7839 | 2450 | NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 1987-04-19 | 7566 | 3000 | NULL |     20 |
+|  7839 | KING   | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 1981-09-08 | 7698 | 1500 |    0 |     30 |
+|  7876 | ADAMS  | CLERK     | 1987-05-23 | 7788 | 1100 | NULL |     20 |
+|  7900 | JAMES  | CLERK     | 1981-12-03 | 7698 |  950 | NULL |     30 |
+|  7902 | FORD   | ANALYST   | 1981-12-03 | 7566 | 3000 | NULL |     20 |
+|  7934 | MILLER | CLERK     | 1982-01-23 | 7782 | 1300 | NULL |     10 |
++-------+--------+-----------+------------+------+------+------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select * from dept;
++--------+------------+----------+
+| DEPTNO | DNAME      | LOC      |
++--------+------------+----------+
+|     10 | ACCOUNTING | NEW YORK |
+|     20 | RESEARCH   | DALLAS   |
+|     30 | SALES      | CHICAGO  |
+|     40 | OPERATIONS | BOSTON   |
++--------+------------+----------+
+4 rows in set (0.00 sec)
+
+mysql>

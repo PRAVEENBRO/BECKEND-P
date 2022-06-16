@@ -1,0 +1,40 @@
+mysql> select ename, sal  from emp where sal<all(select sal from emp where job='salesman');
++-------+------+
+| ename | sal  |
++-------+------+
+| SMITH |  800 |
+| ADAMS | 1100 |
+| JAMES |  950 |
++-------+------+
+3 rows in set (0.01 sec)
+
+mysql> select * from emp where sal> any(select sal from emp where job='manager');
++-------+-------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+-------+-----------+------------+------+------+------+--------+
+|  7566 | JONES | MANAGER   | 1981-04-02 | 7839 | 2975 | NULL |     20 |
+|  7698 | BLAKE | MANAGER   | 1981-05-01 | 7839 | 2850 | NULL |     30 |
+|  7788 | SCOTT | ANALYST   | 1987-04-19 | 7566 | 3000 | NULL |     20 |
+|  7839 | KING  | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
+|  7902 | FORD  | ANALYST   | 1981-12-03 | 7566 | 3000 | NULL |     20 |
++-------+-------+-----------+------------+------+------+------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select  ename, hiredate from emp where hiredate< all(select hiredate from emp where deptno= 10);
++-------+------------+
+| ename | hiredate   |
++-------+------------+
+| SMITH | 1980-12-17 |
+| ALLEN | 1981-02-20 |
+| WARD  | 1981-02-22 |
+| JONES | 1981-04-02 |
+| BLAKE | 1981-05-01 |
++-------+------------+
+5 rows in set (0.00 sec)
+
+
+
+1) explain limit and offset with example ?
+2) what is joint? explain types of joints ?
+3) explain TCL statements ?
+4) explain DCL statements ?

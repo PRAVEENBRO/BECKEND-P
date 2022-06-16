@@ -1,0 +1,953 @@
+DDL
+-------
+
+1) CREATE
+
+Create table TableName(
+colName  dataType-1
+colName  datatype-2
+================================================================
+
+2) ALTER
+
+Add,drop or modify
+
+ALTER TABLE TABLE_NAME
+
+    =>ADD COLUMN COLUMN_NAME VARCHAR(25)
+
+mysql> ALTER TABLE PERSON_INFO
+    -> ADD COLUMN EMAIL VARCHAR(25)
+    -> ;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC PERSON_INFO;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int         | YES  | UNI | NULL    |       |
+| NAME  | varchar(20) | NO   |     | NULL    |       |
+| SAL   | int         | YES  |     | NULL    |       |
+| AGE   | int         | YES  |     | NULL    |       |
+| EMAIL | varchar(25) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+      
+
+======================================================================
+
+
+    =>MODIFY COLUMN COLUMN_NAME VARCHAR( ) 
+
+
+mysql> ALTER TABLE PERSON_INFO
+    -> MODIFY COLUMN SAL VARCHAR(10)
+    -> ;
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC PERSON_INFO;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int         | YES  | UNI | NULL    |       |
+| NAME  | varchar(20) | NO   |     | NULL    |       |
+| SAL   | varchar(10) | YES  |     | NULL    |       |
+| AGE   | int         | YES  |     | NULL    |       |
+| EMAIL | varchar(25) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+5 rows in set (0.02 sec)
+
+========================================================================
+
+    => DROP COLUMN COLUMN_NAME 
+
+mysql> ALTER TABLE PERSON_INFO
+    -> DROP COLUMN SAL;
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC PERSON_INFO;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int         | YES  | UNI | NULL    |       |
+| NAME  | varchar(20) | NO   |     | NULL    |       |
+| AGE   | int         | YES  |     | NULL    |       |
+| EMAIL | varchar(25) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+============================================================================
+
+
+3) RENAME
+
+ RENAME TABLE OLD_NAME TO NEW_NAME
+
+mysql> RENAME TABLE PERSON_INFO TO PERSON_DEVIL;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_techno |
++------------------+
+| person_devil     |
++------------------+
+1 row in set (0.01 sec)
+ 
+mysql> SELECTN * FROM PERSON_INFO;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECTN * FROM PERSON_INFO' at line 1
+
+
+==================================================================================
+
+
+4) DROP TABLE TABLE_NAME
+
+
+mysql> DROP TABLE PERSON_INFO;
+ERROR 1051 (42S02): Unknown table 'techno.person_info'
+mysql> DROP TABLE PERSON_DEVIL;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> SHOW TABLES
+    -> ^C
+mysql> SHOW TABLES;
+Empty set (0.01 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| techno             |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> DROP DATABASE TECHNO;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+DONE with DDM except trunket
+
+
+-----------------DML------------------
+
+insert records in table by 2 ways
+
+INSERT INFO Table_name(
+COL1, COL2, COL....)
+VALUE( VAL1, VAL2, ....)
+
+SYNTEX INFO TABLE VALUE
+
+Val1, val2, ....valn)
+
+
+
+
+------------------ASSIGNMENT-----------------
+
+1) DIFF BTW  DBMS & RDBMS?
+2) WHATS IS RELATIONAL MODEL?
+3) WHAT IS DATA TYPES AND EXPLAIN DECRIBE DATA TYPE?
+4) WHAT IS CONSTARAINS. EXPLAIN EACH CONSTRAINS?
+5) WHAT ALL ARE THE DDL STATEMENTS AND DECRIBE EACH?
+6) LIST THE DML STATEMENT AND DESCRIBE EACH ?
+
+
+
+
+--------------  21/12/2021-----------------
+
+OPEN IN MYSQL CMD APPLICATION
+
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES
+    -> ^C
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| techno             |
++--------------------+
+5 rows in set (0.04 sec)
+
+mysql> USE TECHNO;
+Database changed
+mysql> CREATE TABLE PERSON_INFO;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> CREATE TABLE PERSON_INFO()
+    -> ^Z^C
+mysql> CREATE TABLE PERSON_INFO(ID INT PRIMARY KEY, NAME VARCHAR(25) NOT NULL, SAL INT , AGE INT);
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> DESC PERSON_INFO;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int         | NO   | PRI | NULL    |       |
+| NAME  | varchar(25) | NO   |     | NULL    |       |
+| SAL   | int         | YES  |     | NULL    |       |
+| AGE   | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> INSERT INTO PERSON_INFO( ID,NAME, SAL, AGE) VALUES(101,'PRAVEEN',1000000,23)
+    -> ^C
+mysql> INSERT INTO PERSON_INFO( ID,NAME, SAL, AGE) VALUES(101,'PRAVEEN',1000000,23);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> DESC PERSON_INFO;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int         | NO   | PRI | NULL    |       |
+| NAME  | varchar(25) | NO   |     | NULL    |       |
+| SAL   | int         | YES  |     | NULL    |       |
+| AGE   | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> SELECT * FROM PERSON_INFO;
++-----+---------+---------+------+
+| ID  | NAME    | SAL     | AGE  |
++-----+---------+---------+------+
+| 101 | PRAVEEN | 1000000 |   23 |
++-----+---------+---------+------+
+1 row in set (0.01 sec)
+
+mysql> INSERT INTO PERSON_INFO( ID,NAME, SAL, AGE) VALUES(102,'DEVIL',200200,25);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO PERSON_INFO( ID,NAME, SAL, AGE) VALUES(103,'FIGHTER',625340,24);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO PERSON_INFO( ID,NAME, SAL, AGE) VALUES(103,'PAWAN',1200000,25);
+ERROR 1062 (23000): Duplicate entry '103' for key 'person_info.PRIMARY'
+mysql> SELECT * FROM PERSON_INFO;
++-----+---------+---------+------+
+| ID  | NAME    | SAL     | AGE  |
++-----+---------+---------+------+
+| 101 | PRAVEEN | 1000000 |   23 |
+| 102 | DEVIL   |  200200 |   25 |
+| 103 | FIGHTER |  625340 |   24 |
++-----+---------+---------+------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT INTO PERSON_INFO( ID,NAME, SAL, AGE) VALUES(104,'PAWAN',1200000,25);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM PERSON_INFO;
++-----+---------+---------+------+
+| ID  | NAME    | SAL     | AGE  |
++-----+---------+---------+------+
+| 101 | PRAVEEN | 1000000 |   23 |
+| 102 | DEVIL   |  200200 |   25 |
+| 103 | FIGHTER |  625340 |   24 |
+| 104 | PAWAN   | 1200000 |   25 |
++-----+---------+---------+------+
+4 rows in set (0.00 sec)
+
+mysql> UPDATE PERSON_INFO SET SAL=2000000
+    -> WHERE ID =102;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM PERSON_INFO;
++-----+---------+---------+------+
+| ID  | NAME    | SAL     | AGE  |
++-----+---------+---------+------+
+| 101 | PRAVEEN | 1000000 |   23 |
+| 102 | DEVIL   | 2000000 |   25 |
+| 103 | FIGHTER |  625340 |   24 |
+| 104 | PAWAN   | 1200000 |   25 |
++-----+---------+---------+------+
+4 rows in set (0.01 sec)
+
+mysql> UPDATE PERSON_INFO SET SAL=6001000
+    -> WHERE ID =103;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM PERSON_INFO;
++-----+---------+---------+------+
+| ID  | NAME    | SAL     | AGE  |
++-----+---------+---------+------+
+| 101 | PRAVEEN | 1000000 |   23 |
+| 102 | DEVIL   | 2000000 |   25 |
+| 103 | FIGHTER | 6001000 |   24 |
+| 104 | PAWAN   | 1200000 |   25 |
++-----+---------+---------+------+
+4 rows in set (0.00 sec)
+
+
+
+================= DELETE THE ROW USING ID(WHERE CLOUSE)===============
+
+
+mysql> DELETE FROM PERSON_INFO
+    -> WHERE ID=102;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM PERSON_INFO;
++-----+---------+---------+------+
+| ID  | NAME    | SAL     | AGE  |
++-----+---------+---------+------+
+| 101 | PRAVEEN | 1000000 |   23 |
+| 103 | FIGHTER | 6001000 |   24 |
+| 104 | PAWAN   | 1200000 |   25 |
++-----+---------+---------+------+
+3 rows in set (0.00 sec)
+
+
+
+CRUD	SQL
+
+
+Create	INSERT
+Read	SELECT
+Update	UPDATE
+Delete	DELETE
+
+
+================================
+
+TO CARRY OUT MATHAMITICAL OPERATION IN A DUMMY TABLE
+
+mysql> SELECT 30.93*72.14
+    -> FROM DUAL;
++-------------+
+| 30.93*72.14 |
++-------------+
+|   2231.2902 |
++-------------+
+
+
+
+==============DQL=============
+
+PROJECTION :-  RETRIVAL OF DATA BY SELECTING ONLY COLUMN
+SELECTION:-    RETRIVAL OF DATA BY SELECTION BOTH ROWS AND COLUMN
+JOINS:-        RETRIVAL OF DATA BY MULTIPLE TABLES
+
+PROJECTION ;
+SELECT */[DISTINCT] COLUMN NAME/ EXPERSION
+FROM TABLE NAME;
+
+
+mysql> SELECT DISTINCT AGE      // FOR DISTINCT COLUMN NAME
+    -> FROM PERSON_INFO;
++------+
+| AGE  |
++------+
+|   23 |
+|   24 |
+|   25 |
++------+
+3 rows in set (0.00 sec)
+
+mysql>
+mysql> SELECT *                 // FOR * IT SELECTS ALLDATA
+    -> FROM PERSON_INFO;
++-----+---------+---------+------+
+| ID  | NAME    | SAL     | AGE  |
++-----+---------+---------+------+
+| 101 | PRAVEEN | 1000000 |   23 |
+| 103 | FIGHTER | 6001000 |   24 |
+| 104 | PAWAN   | 1200000 |   25 |
++-----+---------+---------+------+
+
+Q1)
+mysql> SELECT *
+    -> FROM EMP;
++-------+--------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME  | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+--------+-----------+------------+------+------+------+--------+
+|  7369 | SMITH  | CLERK     | 1980-12-17 | 7902 |  800 | NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 1981-02-20 | 7698 | 1600 |  300 |     30 |
+|  7521 | WARD   | SALESMAN  | 1981-02-22 | 7698 | 1250 |  500 |     30 |
+|  7566 | JONES  | MANAGER   | 1981-04-02 | 7839 | 2975 | NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 1981-09-28 | 7698 | 1250 | 1400 |     30 |
+|  7698 | BLAKE  | MANAGER   | 1981-05-01 | 7839 | 2850 | NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 1981-06-09 | 7839 | 2450 | NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 1987-04-19 | 7566 | 3000 | NULL |     20 |
+|  7839 | KING   | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 1981-09-08 | 7698 | 1500 |    0 |     30 |
+|  7876 | ADAMS  | CLERK     | 1987-05-23 | 7788 | 1100 | NULL |     20 |
+|  7900 | JAMES  | CLERK     | 1981-12-03 | 7698 |  950 | NULL |     30 |
+|  7902 | FORD   | ANALYST   | 1981-12-03 | 7566 | 3000 | NULL |     20 |
+|  7934 | MILLER | CLERK     | 1982-01-23 | 7782 | 1300 | NULL |     10 |
++-------+--------+-----------+------------+------+------+------+--------+
+
+
+Q2)
+mysql> SELECT ENAME
+    -> FROM EMP;
++--------+
+| ENAME  |
++--------+
+| SMITH  |
+| ALLEN  |
+| WARD   |
+| JONES  |
+| MARTIN |
+| BLAKE  |
+| CLARK  |
+| SCOTT  |
+| KING   |
+| TURNER |
+| ADAMS  |
+| JAMES  |
+| FORD   |
+| MILLER |
++--------+
+
+Q3)
+
+mysql> SELECT ENAME, SAL
+    -> FROM EMP;
++--------+------+
+| ENAME  | SAL  |
++--------+------+
+| SMITH  |  800 |
+| ALLEN  | 1600 |
+| WARD   | 1250 |
+| JONES  | 2975 |
+| MARTIN | 1250 |
+| BLAKE  | 2850 |
+| CLARK  | 2450 |
+| SCOTT  | 3000 |
+| KING   | 5000 |
+| TURNER | 1500 |
+| ADAMS  | 1100 |
+| JAMES  |  950 |
+| FORD   | 3000 |
+| MILLER | 1300 |
++--------+------+
+
+
+Q4)
+
+
+mysql> SELECT ENAME, SAL*12
+    -> FROM EMP;
++--------+--------+
+| ENAME  | SAL*12 |
++--------+--------+
+| SMITH  |   9600 |
+| ALLEN  |  19200 |
+| WARD   |  15000 |
+| JONES  |  35700 |
+| MARTIN |  15000 |
+| BLAKE  |  34200 |
+| CLARK  |  29400 |
+| SCOTT  |  36000 |
+| KING   |  60000 |
+| TURNER |  18000 |
+| ADAMS  |  13200 |
+| JAMES  |  11400 |
+| FORD   |  36000 |
+| MILLER |  15600 |
++--------+--------+
+
+Q5)
+
+mysql> SELECT EMPNO, DEPTNO
+    -> FROM EMP;
++-------+--------+
+| EMPNO | DEPTNO |
++-------+--------+
+|  7369 |     20 |
+|  7499 |     30 |
+|  7521 |     30 |
+|  7566 |     20 |
+|  7654 |     30 |
+|  7698 |     30 |
+|  7782 |     10 |
+|  7788 |     20 |
+|  7839 |     10 |
+|  7844 |     30 |
+|  7876 |     20 |
+|  7900 |     30 |
+|  7902 |     20 |
+|  7934 |     10 |
++-------+--------+
+
+Q6)
+
+mysql> SELECT ENAME, HIREDATE
+    -> FROM EMP;
++--------+------------+
+| ENAME  | HIREDATE   |
++--------+------------+
+| SMITH  | 1980-12-17 |
+| ALLEN  | 1981-02-20 |
+| WARD   | 1981-02-22 |
+| JONES  | 1981-04-02 |
+| MARTIN | 1981-09-28 |
+| BLAKE  | 1981-05-01 |
+| CLARK  | 1981-06-09 |
+| SCOTT  | 1987-04-19 |
+| KING   | 1981-11-17 |
+| TURNER | 1981-09-08 |
+| ADAMS  | 1987-05-23 |
+| JAMES  | 1981-12-03 |
+| FORD   | 1981-12-03 |
+| MILLER | 1982-01-23 |
++--------+------------+
+
+Q7)
+
+mysql> SELECT ENAME, JOB
+    -> FROM EMP;
++--------+-----------+
+| ENAME  | JOB       |
++--------+-----------+
+| SMITH  | CLERK     |
+| ALLEN  | SALESMAN  |
+| WARD   | SALESMAN  |
+| JONES  | MANAGER   |
+| MARTIN | SALESMAN  |
+| BLAKE  | MANAGER   |
+| CLARK  | MANAGER   |
+| SCOTT  | ANALYST   |
+| KING   | PRESIDENT |
+| TURNER | SALESMAN  |
+| ADAMS  | CLERK     |
+| JAMES  | CLERK     |
+| FORD   | ANALYST   |
+| MILLER | CLERK     |
++--------+-----------+
+
+Q8)
+
+mysql> SELECT ENAME, SAL *6
+    -> FROM EMP;
++--------+--------+
+| ENAME  | SAL *6 |
++--------+--------+
+| SMITH  |   4800 |
+| ALLEN  |   9600 |
+| WARD   |   7500 |
+| JONES  |  17850 |
+| MARTIN |   7500 |
+| BLAKE  |  17100 |
+| CLARK  |  14700 |
+| SCOTT  |  18000 |
+| KING   |  30000 |
+| TURNER |   9000 |
+| ADAMS  |   6600 |
+| JAMES  |   5700 |
+| FORD   |  18000 |
+| MILLER |   7800 |
++--------+--------+
+
+
+
+mysql> SELECT SAL*12 ANNUALSAL
+    -> FROM EMP
+    -> WHERE ENAME='SMITH';
++-----------+
+| ANNUALSAL |
++-----------+
+|      9600 |
++-----------+
+1 row in set (0.01 sec)
+
+mysql> SELECT ENAME
+    -> FROM EMP
+    -> WHERE JOB='CLERK';
++--------+
+| ENAME  |
++--------+
+| SMITH  |
+| ADAMS  |
+| JAMES  |
+| MILLER |
++--------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT SAL
+    -> FROM EMP
+    -> WHERE JOB='SALESMAN';
++------+
+| SAL  |
++------+
+| 1600 |
+| 1250 |
+| 1250 |
+| 1500 |
++------+
+
+
+
+mysql> SELECT *
+    -> FROM EMP
+    -> WHERE SAL>2000;
++-------+-------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+-------+-----------+------------+------+------+------+--------+
+|  7566 | JONES | MANAGER   | 1981-04-02 | 7839 | 2975 | NULL |     20 |
+|  7698 | BLAKE | MANAGER   | 1981-05-01 | 7839 | 2850 | NULL |     30 |
+|  7782 | CLARK | MANAGER   | 1981-06-09 | 7839 | 2450 | NULL |     10 |
+|  7788 | SCOTT | ANALYST   | 1987-04-19 | 7566 | 3000 | NULL |     20 |
+|  7839 | KING  | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
+|  7902 | FORD  | ANALYST   | 1981-12-03 | 7566 | 3000 | NULL |     20 |
++-------+-------+-----------+------------+------+------+------+--------+
+
+
+
+mysql> SELECT *
+    -> FROM EMP
+    -> WHERE ENAME='JONES';
++-------+-------+---------+------------+------+------+------+--------+
+| EMPNO | ENAME | JOB     | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+-------+---------+------------+------+------+------+--------+
+|  7566 | JONES | MANAGER | 1981-04-02 | 7839 | 2975 | NULL |     20 |
++-------+-------+---------+------------+------+------+------+--------+
+1 row in set (0.00 sec)
+
+mysql> SELECT *
+    -> FROM EMP
+    -> WHERE HIREDATE > '1981-05-01';
++-------+--------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME  | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+--------+-----------+------------+------+------+------+--------+
+|  7654 | MARTIN | SALESMAN  | 1981-09-28 | 7698 | 1250 | 1400 |     30 |
+|  7782 | CLARK  | MANAGER   | 1981-06-09 | 7839 | 2450 | NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 1987-04-19 | 7566 | 3000 | NULL |     20 |
+|  7839 | KING   | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 1981-09-08 | 7698 | 1500 |    0 |     30 |
+|  7876 | ADAMS  | CLERK     | 1987-05-23 | 7788 | 1100 | NULL |     20 |
+|  7900 | JAMES  | CLERK     | 1981-12-03 | 7698 |  950 | NULL |     30 |
+|  7902 | FORD   | ANALYST   | 1981-12-03 | 7566 | 3000 | NULL |     20 |
+|  7934 | MILLER | CLERK     | 1982-01-23 | 7782 | 1300 | NULL |     10 |
++-------+--------+-----------+------------+------+------+------+--------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT ENAME, SAL, SAL*12
+    -> FROM EMP
+    -> WHERE SAL*12 > 12000;
++--------+------+--------+
+| ENAME  | SAL  | SAL*12 |
++--------+------+--------+
+| ALLEN  | 1600 |  19200 |
+| WARD   | 1250 |  15000 |
+| JONES  | 2975 |  35700 |
+| MARTIN | 1250 |  15000 |
+| BLAKE  | 2850 |  34200 |
+| CLARK  | 2450 |  29400 |
+| SCOTT  | 3000 |  36000 |
+| KING   | 5000 |  60000 |
+| TURNER | 1500 |  18000 |
+| ADAMS  | 1100 |  13200 |
+| FORD   | 3000 |  36000 |
+| MILLER | 1300 |  15600 |
++--------+------+--------+
+12 rows in set (0.00 sec)
+
+
+
+mysql> SELECT EMPNO
+    -> FROM EMP
+    -> WHERE DEPTNO=30;
++-------+
+| EMPNO |
++-------+
+|  7499 |
+|  7521 |
+|  7654 |
+|  7698 |
+|  7844 |
+|  7900 |
++-------+
+
+mysql> SELECT ENAME, HIREDATE
+    -> FROM EMP
+    -> WHERE HIREDATE < '1980-12-31';
++-------+------------+
+| ENAME | HIREDATE   |
++-------+------------+
+| SMITH | 1980-12-17 |
++-------+------------+
+
+
+
+mysql> SELECT ENAME, HIREDATE
+    -> FROM EMP
+    -> WHERE HIREDATE > '1981-01-01';
++--------+------------+
+| ENAME  | HIREDATE   |
++--------+------------+
+| ALLEN  | 1981-02-20 |
+| WARD   | 1981-02-22 |
+| JONES  | 1981-04-02 |
+| MARTIN | 1981-09-28 |
+| BLAKE  | 1981-05-01 |
+| CLARK  | 1981-06-09 |
+| SCOTT  | 1987-04-19 |
+| KING   | 1981-11-17 |
+| TURNER | 1981-09-08 |
+| ADAMS  | 1987-05-23 |
+| JAMES  | 1981-12-03 |
+| FORD   | 1981-12-03 |
+| MILLER | 1982-01-23 |
++--------+------------+
+
+
+
+mysql> SELECT ENAME, SAL
+    -> FROM EMP
+    -> WHERE DEPTNO=20;
++-------+------+
+| ENAME | SAL  |
++-------+------+
+| SMITH |  800 |
+| JONES | 2975 |
+| SCOTT | 3000 |
+| ADAMS | 1100 |
+| FORD  | 3000 |
++-------+------+
+
+
+
+mysql> SELECT *
+    -> FROM EMP
+    -> WHERE JOB='MANAGER' AND ( DEPTNO=10 OR  DEPTNO=20 OR DEPTNO=30);
++-------+-------+---------+------------+------+------+------+--------+
+| EMPNO | ENAME | JOB     | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+-------+---------+------------+------+------+------+--------+
+|  7566 | JONES | MANAGER | 1981-04-02 | 7839 | 2975 | NULL |     20 |
+|  7698 | BLAKE | MANAGER | 1981-05-01 | 7839 | 2850 | NULL |     30 |
+|  7782 | CLARK | MANAGER | 1981-06-09 | 7839 | 2450 | NULL |     10 |
++-------+-------+---------+------------+------+------+------+--------+
+
+mysql> SELECT *
+    -> FROM EMP
+    -> WHERE JOB='CLERK' AND SAL<1500;
++-------+--------+-------+------------+------+------+------+--------+
+| EMPNO | ENAME  | JOB   | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+--------+-------+------------+------+------+------+--------+
+|  7369 | SMITH  | CLERK | 1980-12-17 | 7902 |  800 | NULL |     20 |
+|  7876 | ADAMS  | CLERK | 1987-05-23 | 7788 | 1100 | NULL |     20 |
+|  7900 | JAMES  | CLERK | 1981-12-03 | 7698 |  950 | NULL |     30 |
+|  7934 | MILLER | CLERK | 1982-01-23 | 7782 | 1300 | NULL |     10 |
++-------+--------+-------+------------+------+------+------+--------+
+
+mysql> SELECT ENAME , HIREDATE
+    -> FROM EMP
+    -> WHERE JOB='MANAGER' AND DEPTNO=30;
++-------+------------+
+| ENAME | HIREDATE   |
++-------+------------+
+| BLAKE | 1981-05-01 |
++-------+------------+
+
+
+
+mysql> SELECT *, SAL*12
+    -> FROM EMP
+    -> WHERE DEPTNO=30 AND JOB='SALESMAN' AND SAL*12>1400;
++-------+--------+----------+------------+------+------+------+--------+--------+
+| EMPNO | ENAME  | JOB      | HIREDATE   | MGR  | SAL  | COMM | DEPTNO | SAL*12 |
++-------+--------+----------+------------+------+------+------+--------+--------+
+|  7499 | ALLEN  | SALESMAN | 1981-02-20 | 7698 | 1600 |  300 |     30 |  19200 |
+|  7521 | WARD   | SALESMAN | 1981-02-22 | 7698 | 1250 |  500 |     30 |  15000 |
+|  7654 | MARTIN | SALESMAN | 1981-09-28 | 7698 | 1250 | 1400 |     30 |  15000 |
+|  7844 | TURNER | SALESMAN | 1981-09-08 | 7698 | 1500 |    0 |     30 |  18000 |
++-------+--------+----------+------------+------+------+------+--------+--------+
+
+
+mysql> SELECT *
+    -> FROM EMP
+    -> WHERE DEPTNO=30 OR JOB='ANALYST';
++-------+--------+----------+------------+------+------+------+--------+
+| EMPNO | ENAME  | JOB      | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+--------+----------+------------+------+------+------+--------+
+|  7499 | ALLEN  | SALESMAN | 1981-02-20 | 7698 | 1600 |  300 |     30 |
+|  7521 | WARD   | SALESMAN | 1981-02-22 | 7698 | 1250 |  500 |     30 |
+|  7654 | MARTIN | SALESMAN | 1981-09-28 | 7698 | 1250 | 1400 |     30 |
+|  7698 | BLAKE  | MANAGER  | 1981-05-01 | 7839 | 2850 | NULL |     30 |
+|  7788 | SCOTT  | ANALYST  | 1987-04-19 | 7566 | 3000 | NULL |     20 |
+|  7844 | TURNER | SALESMAN | 1981-09-08 | 7698 | 1500 |    0 |     30 |
+|  7900 | JAMES  | CLERK    | 1981-12-03 | 7698 |  950 | NULL |     30 |
+|  7902 | FORD   | ANALYST  | 1981-12-03 | 7566 | 3000 | NULL |     20 |
++-------+--------+----------+------------+------+------+------+--------+
+
+
+
+mysql> SELECT ENAME
+    -> FROM EMP
+    -> WHERE SAL<1100 AND JOB='CLERK';
++-------+
+| ENAME |
++-------+
+| SMITH |
+| JAMES |
++-------+
+
+
+mysql> SELECT ENAME, SAL, SAL*12, DEPTNO
+    -> FROM EMP
+    -> WHERE DEPTNO=20 AND SAL>1100 AND SAL*12> 12000;
++-------+------+--------+--------+
+| ENAME | SAL  | SAL*12 | DEPTNO |
++-------+------+--------+--------+
+| JONES | 2975 |  35700 |     20 |
+| SCOTT | 3000 |  36000 |     20 |
+| FORD  | 3000 |  36000 |     20 |
++-------+------+--------+--------+
+
+
+mysql> SELECT ENAME, JOB
+    -> FROM EMP
+    -> WHERE JOB='MANAGER' OR JOB='SALESMAN' OR JOB='CLERK' OR JOB='ANALYST';
++--------+----------+
+| ENAME  | JOB      |
++--------+----------+
+| SMITH  | CLERK    |
+
+| ALLEN  | SALESMAN |
+| WARD   | SALESMAN |
+| JONES  | MANAGER  |
+| MARTIN | SALESMAN |
+| BLAKE  | MANAGER  |
+| CLARK  | MANAGER  |
+| SCOTT  | ANALYST  |
+| TURNER | SALESMAN |
+| ADAMS  | CLERK    |
+| JAMES  | CLERK    |
+| FORD   | ANALYST  |
+| MILLER | CLERK    |
++--------+----------+
+
+
+mysql> SELECT ENAME, JOB, DEPTNO
+    -> FROM EMP
+    -> WHERE JOB='CLERK' AND DEPTNO IN(10,30);
++--------+-------+--------+
+| ENAME  | JOB   | DEPTNO |
++--------+-------+--------+
+| JAMES  | CLERK |     30 |
+| MILLER | CLERK |     10 |
++--------+-------+--------+
+
+
+
+mysql> SELECT ENAME, SAL
+    -> FROM EMP
+    -> WHERE SAL BETWEEN 1250 AND 3000;
++--------+------+
+| ENAME  | SAL  |
++--------+------+
+| ALLEN  | 1600 |
+| WARD   | 1250 |
+| JONES  | 2975 |
+| MARTIN | 1250 |
+| BLAKE  | 2850 |
+| CLARK  | 2450 |
+| SCOTT  | 3000 |
+| TURNER | 1500 |
+| FORD   | 3000 |
+| MILLER | 1300 |
++--------+------+
+10 rows in set (0.01 sec)
+
+mysql> SELECT ENAME, HIREDATE
+    -> FROM EMP
+    -> WHERE HIREDATE BETWEEN '1981-01-01' AND '1981-12-31';
++--------+------------+
+| ENAME  | HIREDATE   |
++--------+------------+
+| ALLEN  | 1981-02-20 |
+| WARD   | 1981-02-22 |
+| JONES  | 1981-04-02 |
+| MARTIN | 1981-09-28 |
+| BLAKE  | 1981-05-01 |
+| CLARK  | 1981-06-09 |
+| KING   | 1981-11-17 |
+| TURNER | 1981-09-08 |
+| JAMES  | 1981-12-03 |
+| FORD   | 1981-12-03 |
++--------+------------+
+
+mysql> SELECT ENAME, SAL
+    -> FROM EMP
+    -> WHERE SAL LIKE '%50';
++--------+------+
+| ENAME  | SAL  |
++--------+------+
+| WARD   | 1250 |
+| MARTIN | 1250 |
+| BLAKE  | 2850 |
+| CLARK  | 2450 |
+| JAMES  |  950 |
++--------+------+
+
+
+
+
+
+
+
+
+========================= MULTI ROWFUNCTION  ===============
+
+
+mysql> SELECT COUNT(*)
+    -> FROM EMP;
++----------+
+| COUNT(*) |
++----------+
+|       14 |
++----------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,165 @@
+mysql> select * from epm;
+ERROR 1146 (42S02): Table 'techno.epm' doesn't exist
+mysql> select * from emp;
++-------+--------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME  | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+--------+-----------+------------+------+------+------+--------+
+|  7369 | SMITH  | CLERK     | 1980-12-17 | 7902 |  800 | NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 1981-02-20 | 7698 | 1600 |  300 |     30 |
+|  7521 | WARD   | SALESMAN  | 1981-02-22 | 7698 | 1250 |  500 |     30 |
+|  7566 | JONES  | MANAGER   | 1981-04-02 | 7839 | 2975 | NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 1981-09-28 | 7698 | 1250 | 1400 |     30 |
+|  7698 | BLAKE  | MANAGER   | 1981-05-01 | 7839 | 2850 | NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 1981-06-09 | 7839 | 2450 | NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 1987-04-19 | 7566 | 3000 | NULL |     20 |
+|  7839 | KING   | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 1981-09-08 | 7698 | 1500 |    0 |     30 |
+|  7876 | ADAMS  | CLERK     | 1987-05-23 | 7788 | 1100 | NULL |     20 |
+|  7900 | JAMES  | CLERK     | 1981-12-03 | 7698 |  950 | NULL |     30 |
+|  7902 | FORD   | ANALYST   | 1981-12-03 | 7566 | 3000 | NULL |     20 |
+|  7934 | MILLER | CLERK     | 1982-01-23 | 7782 | 1300 | NULL |     10 |
++-------+--------+-----------+------------+------+------+------+--------+
+14 rows in set (0.01 sec)
+
+mysql> select * from emp
+    -> ;
++-------+--------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME  | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+--------+-----------+------------+------+------+------+--------+
+|  7369 | SMITH  | CLERK     | 1980-12-17 | 7902 |  800 | NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 1981-02-20 | 7698 | 1600 |  300 |     30 |
+|  7521 | WARD   | SALESMAN  | 1981-02-22 | 7698 | 1250 |  500 |     30 |
+|  7566 | JONES  | MANAGER   | 1981-04-02 | 7839 | 2975 | NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 1981-09-28 | 7698 | 1250 | 1400 |     30 |
+|  7698 | BLAKE  | MANAGER   | 1981-05-01 | 7839 | 2850 | NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 1981-06-09 | 7839 | 2450 | NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 1987-04-19 | 7566 | 3000 | NULL |     20 |
+|  7839 | KING   | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 1981-09-08 | 7698 | 1500 |    0 |     30 |
+|  7876 | ADAMS  | CLERK     | 1987-05-23 | 7788 | 1100 | NULL |     20 |
+|  7900 | JAMES  | CLERK     | 1981-12-03 | 7698 |  950 | NULL |     30 |
+|  7902 | FORD   | ANALYST   | 1981-12-03 | 7566 | 3000 | NULL |     20 |
+|  7934 | MILLER | CLERK     | 1982-01-23 | 7782 | 1300 | NULL |     10 |
++-------+--------+-----------+------------+------+------+------+--------+
+14 rows in set (0.00 sec)
+
+mysql> tunckate table emp
+    -> tunckate table emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tunckate table emp
+tunckate table emp' at line 1
+mysql> 
+mysql> ^C
+mysql> truncate table emp;
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> select * from emp;
+Empty set (0.02 sec)
+
+mysql> desc emp;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| EMPNO    | int         | YES  |     | NULL    |       |
+| ENAME    | varchar(20) | YES  |     | NULL    |       |
+| JOB      | varchar(20) | YES  |     | NULL    |       |
+| HIREDATE | date        | YES  |     | NULL    |       |
+| MGR      | int         | YES  |     | NULL    |       |
+| SAL      | int         | YES  |     | NULL    |       |
+| COMM     | int         | YES  |     | NULL    |       |
+| DEPTNO   | int         | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
+
+mysql> 
+mysql> INSERT INTO EMP(EMPNO,ENAME,JOB,HIREDATE,MGR,SAL,COMM,DEPTNO)
+    ->           VALUES(7369,'SMITH','CLERK','1980-12-17',7902,800,NULL,20); 
+Query OK, 1 row affected (0.01 sec)
+
+mysql> 
+mysql> INSERT INTO EMP VALUES(7499,'ALLEN','SALESMAN','1981-02-20',7698,1600,300,30);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMP VALUES(7521,'WARD','SALESMAN','1981-02-22',7698,1250,500,30);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMP VALUES(7566,'JONES','MANAGER','1981-04-02',7839,2975,NULL,20);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMP VALUES(7654,'MARTIN','SALESMAN','1981-09-28',7698,1250,1400,30);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMP VALUES(7698,'BLAKE','MANAGER','1981-05-01',7839,2850,NULL,30);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMP VALUES(7782,'CLARK','MANAGER','1981-06-09',7839,2450,NULL,10);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO EMP VALUES(7788,'SCOTT','ANALYST','1987-04-19',7566,3000,NULL,20);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMP VALUES(7839,'KING','PRESIDENT','1981-11-17',NULL,5000,NULL,10);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO EMP VALUES(7844,'TURNER','SALESMAN','1981-09-08',7698,1500,0,30);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMP VALUES(7876,'ADAMS','CLERK','1987-05-23',7788,1100,NULL,20);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO EMP VALUES(7900,'JAMES','CLERK','1981-12-03',7698,950,NULL,30);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO EMP VALUES(7902,'FORD','ANALYST','1981-12-03',7566,3000,NULL,20);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMP VALUES(7934,'MILLER','CLERK','1982-01-23',7782,1300,NULL,10);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from emp;
++-------+--------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME  | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+--------+-----------+------------+------+------+------+--------+
+|  7369 | SMITH  | CLERK     | 1980-12-17 | 7902 |  800 | NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 1981-02-20 | 7698 | 1600 |  300 |     30 |
+|  7521 | WARD   | SALESMAN  | 1981-02-22 | 7698 | 1250 |  500 |     30 |
+|  7566 | JONES  | MANAGER   | 1981-04-02 | 7839 | 2975 | NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 1981-09-28 | 7698 | 1250 | 1400 |     30 |
+|  7698 | BLAKE  | MANAGER   | 1981-05-01 | 7839 | 2850 | NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 1981-06-09 | 7839 | 2450 | NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 1987-04-19 | 7566 | 3000 | NULL |     20 |
+|  7839 | KING   | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 1981-09-08 | 7698 | 1500 |    0 |     30 |
+|  7876 | ADAMS  | CLERK     | 1987-05-23 | 7788 | 1100 | NULL |     20 |
+|  7900 | JAMES  | CLERK     | 1981-12-03 | 7698 |  950 | NULL |     30 |
+|  7902 | FORD   | ANALYST   | 1981-12-03 | 7566 | 3000 | NULL |     20 |
+|  7934 | MILLER | CLERK     | 1982-01-23 | 7782 | 1300 | NULL |     10 |
++-------+--------+-----------+------------+------+------+------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select * from emp where sal>(select sal from emp where ename='allen');
++-------+-------+-----------+------------+------+------+------+--------+
+| EMPNO | ENAME | JOB       | HIREDATE   | MGR  | SAL  | COMM | DEPTNO |
++-------+-------+-----------+------------+------+------+------+--------+
+|  7566 | JONES | MANAGER   | 1981-04-02 | 7839 | 2975 | NULL |     20 |
+|  7698 | BLAKE | MANAGER   | 1981-05-01 | 7839 | 2850 | NULL |     30 |
+|  7782 | CLARK | MANAGER   | 1981-06-09 | 7839 | 2450 | NULL |     10 |
+|  7788 | SCOTT | ANALYST   | 1987-04-19 | 7566 | 3000 | NULL |     20 |
+|  7839 | KING  | PRESIDENT | 1981-11-17 | NULL | 5000 | NULL |     10 |
+|  7902 | FORD  | ANALYST   | 1981-12-03 | 7566 | 3000 | NULL |     20 |
++-------+-------+-----------+------------+------+------+------+--------+
+6 rows in set (0.00 sec)
+
+mysql> select ename, deptno from emp where job=(select job from emp where ename='miller');
++--------+--------+
+| ename  | deptno |
++--------+--------+
+| SMITH  |     20 |
+| ADAMS  |     20 |
+| JAMES  |     30 |
+| MILLER |     10 |
++--------+--------+
+4 rows in set (0.01 sec)
+
+mysql> select count(*) from emp where job=(select deptno from emp where job='clerk');
+ERROR 1242 (21000): Subquery returns more than 1 row
+mysql> Terminal close -- exit!
